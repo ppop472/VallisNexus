@@ -14,6 +14,7 @@ public class Genre
 
     public Genre(string naam, int id)
 	{
+
 		this.naam = naam;
 		this.id = id;
 

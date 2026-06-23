@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
+
 public class Gebruiker
 {
 	public string naam { get; private set; }
@@ -17,6 +18,7 @@ public class Gebruiker
 		this.naam = naam;
 		this.id = id;
 		this.favorieteOptredens = new List<Optreden>();
+
 
     }
 

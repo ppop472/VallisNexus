@@ -11,7 +11,6 @@ public class Podium
     public DateTime deletedAt { get; private set; }
 
 
-
     public Podium(string naam, string beschrijving)
 	{
 		this.naam = naam;

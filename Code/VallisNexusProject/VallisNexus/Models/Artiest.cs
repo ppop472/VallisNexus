@@ -16,6 +16,7 @@ namespace VallisNexus.Models
         public DateTime deletedAt { get; private set; }
 
 
+
         internal Artiest(string naam, int id)
         {
             this.naam = naam;
