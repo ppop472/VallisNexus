@@ -1,8 +1,20 @@
 ﻿using System;
 
-public class Class1
+public class Optreden
 {
-	public Class1()
+	public int id { get; private set; }
+	public string naam { get; private set; }
+	public DateTime starttijd { get; private set; }
+	public DateTime eindtijd { get; private set; }
+
+
+
+
+
+    public Optreden()
 	{
+
+
+
 	}
 }

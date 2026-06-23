@@ -2,8 +2,8 @@
 
 public class Genre
 {
-	public string naam { get; private set; };
-	public int genreId { get; private set; };
+	public string naam { get; private set; }
+	public int id { get; private set; }
 
 
 
@@ -12,7 +12,7 @@ public class Genre
     public Genre(string naam, int id)
 	{
 		this.naam = naam;
-		this.genreId = id;
+		this.id = id;
 
 	}
 }

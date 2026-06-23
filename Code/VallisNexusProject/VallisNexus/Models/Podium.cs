@@ -1,8 +1,23 @@
 ﻿using System;
 
-public class Class1
+public class Podium
 {
-	public Class1()
+	public string naam { get; private set; }
+	public string beschrijving { get; private set; }
+	public int id { get; private set; }
+
+
+
+
+    public Podium(string naam, string beschrijving)
 	{
-	}
+		this.naam = naam;
+		this.beschrijving = beschrijving;
+
+    }
+
+    public void VoegOptredenToe(Optreden optreden)
+    {
+        
+    }
 }
