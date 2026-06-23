@@ -4,13 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace VallisNexus
+namespace VallisNexus.DataAccess
 {
-    internal class Program
+    internal class DBAccess
     {
-        static void Main(string[] args)
-        {
-
-        }
     }
 }

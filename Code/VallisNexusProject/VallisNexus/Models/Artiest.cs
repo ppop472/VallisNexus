@@ -4,13 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace VallisNexus
+namespace VallisNexus.Models
 {
-    internal class Program
+    internal class Artiest
     {
-        static void Main(string[] args)
-        {
-
-        }
     }
 }
