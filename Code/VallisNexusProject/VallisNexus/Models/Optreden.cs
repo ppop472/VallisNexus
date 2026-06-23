@@ -7,6 +7,9 @@ public class Optreden
 	public DateTime starttijd { get; private set; }
 	public DateTime eindtijd { get; private set; }
 
+    public DateTime createdAt { get; private set; }
+    public DateTime updatedAt { get; private set; }
+    public DateTime deletedAt { get; private set; }
 
 
 

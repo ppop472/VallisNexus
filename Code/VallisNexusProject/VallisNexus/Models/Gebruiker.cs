@@ -7,6 +7,9 @@ public class Gebruiker
 	public int id { get; private set; }
 	public List<Optreden> favorieteOptredens { get; private set; }
 
+    public DateTime createdAt { get; private set; }
+    public DateTime updatedAt { get; private set; }
+    public DateTime deletedAt { get; private set; }
 
 
     public Gebruiker(string naam, int id)
