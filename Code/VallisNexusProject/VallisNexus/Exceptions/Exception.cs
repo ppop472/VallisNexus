@@ -8,5 +8,8 @@ namespace VallisNexus.Exceptions
 {
     internal class Exception
     {
+        //we douchen nooit!
+
+
     }
 }

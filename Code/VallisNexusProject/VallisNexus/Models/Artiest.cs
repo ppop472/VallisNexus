@@ -8,5 +8,20 @@ namespace VallisNexus.Models
 {
     internal class Artiest
     {
+        public string naam { get; private set; }
+        public int id { get; private set; }
+        public List <Genre> genres { get; private set; }
+
+
+
+        internal Artiest(string naam, int id)
+        {
+            this.naam = naam;
+            //this.Id = artiestId;
+
+            this.genres = new List<Genre>();
+        }
+
+
     }
 }

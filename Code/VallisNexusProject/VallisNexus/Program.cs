@@ -10,6 +10,9 @@ namespace VallisNexus
     {
         static void Main(string[] args)
         {
+            HoofdMenu hoofdMenu = new HoofdMenu();
+            hoofdMenu.ToonHoofdMenu();
+
 
         }
     }
