@@ -4,13 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace VallisNexus
+namespace VallisNexus.Exceptions
 {
-    internal class Program
+    internal class Exception
     {
-        static void Main(string[] args)
-        {
-
-        }
     }
 }
