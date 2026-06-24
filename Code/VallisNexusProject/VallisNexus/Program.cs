@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.InteropServices.ComTypes;
 using System.Text;
 using System.Threading.Tasks;
 using VallisNexus.DataAccess;
+using VallisNexus.DataAccess.CRUD_VOOR_ORG;
 using VallisNexus.Models;
 
 namespace VallisNexus
@@ -15,23 +17,20 @@ namespace VallisNexus
             //HoofdMenu hoofdMenu = new HoofdMenu();
             //hoofdMenu.ToonHoofdMenu();
 
-            // Voorbeelden Artiest(en)
-            DBArtiest dbartiest = new DBArtiest();
-            List<Artiest> artiesten = dbartiest.GetArtiesten();
+            DBArtiest_ORG test = new DBArtiest_ORG();
+            //test.VoegArtiestToe("MR. Kitty");
+            //test.ArtiestVerwijderen("MR. Kitty");
+            //test.ArtiestUpdaten("Mr.Kitty", "MR. Kitty");
+            test.GenreAanArtiestToevoegen("Christian", "1 2");
 
-            Artiest artiest = dbartiest.GetArtiestMetId(1);
+            DBPodium_ORG test2 = new DBPodium_ORG();
+            //test2.VoegPodiumToe("Side Podium2");
+            //test2.PodiumUpdaten("Podium2","Side Podium2");
+            //test2.PodiumVerwijderen("Podium2");
 
+            
 
-            // Voorbeelden Podium(en)
-            DBPodium dbPodium = new DBPodium();
-            List<Podium> podiums = dbPodium.GetPodium();
-
-            Podium podium = dbPodium.GetPodiumMetId(1);
-
-
-            // Voorbeelden Optreden
-            DBOptreden dbOptreden = new DBOptreden();
-            List<OptredenDTO> optreden = dbOptreden.GetOptreden();
+            Console.ReadLine();
         }
     }
 }

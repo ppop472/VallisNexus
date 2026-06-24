@@ -35,7 +35,16 @@ namespace VallisNexus.DataAccess
                     Artiest artiest = dbArtiest.GetArtiestMetId(optreden.artiestId);
                     Podium podium = dbPodium.GetPodiumMetId(optreden.podiumId);
 
-                    OptredenDTO optredenDTO = new OptredenDTO(optreden.id,artiest.id,optreden.starttijd,optreden.eindtijd,optreden.createdAt,optreden.updatedAt,optreden.deletedAt,podium.id,artiest.naam,podium.naam);
+                    OptredenDTO optredenDTO = new OptredenDTO(optreden.id,
+                                                              artiest.id,
+                                                              optreden.starttijd,
+                                                              optreden.eindtijd,
+                                                              optreden.createdAt,
+                                                              optreden.updatedAt,
+                                                              optreden.deletedAt,
+                                                              podium.id,
+                                                              artiest.naam,
+                                                              podium.naam);
                     optredenDTOLijst.Add (optredenDTO);
                 }
             } 

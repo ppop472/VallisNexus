@@ -32,7 +32,7 @@ namespace VallisNexus.DataAccess
                 {
                     artiestenLijst.Add(artiest);
                 }
-            }     
+            }
             return artiestenLijst;
         }
 
@@ -45,6 +45,17 @@ namespace VallisNexus.DataAccess
                 Artiest query = connection.QueryFirstOrDefault<Artiest>(sql, parameters);
                 return query;
             }            
+        }
+
+        public Artiest GetArtiestMetNaam(string artiestNaam)
+        {
+            string sql = "SELECT * FROM Artiest WHERE Naam = @naam";
+            object parameters = new { naam = artiestNaam };
+            using (var connection = new SqlConnection(dbstring))
+            {
+                Artiest query = connection.QueryFirstOrDefault<Artiest>(sql, parameters);
+                return query;
+            }
         }
     }
 }

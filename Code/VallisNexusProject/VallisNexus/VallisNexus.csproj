@@ -200,6 +200,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DataAccess\CRUD_VOOR_ORG\DBArtiest_ORG.cs" />
+    <Compile Include="DataAccess\CRUD_VOOR_ORG\DBGenre.cs" />
+    <Compile Include="DataAccess\CRUD_VOOR_ORG\DBPodium_ORG.cs" />
     <Compile Include="DataAccess\DBArtiest.cs" />
     <Compile Include="DataAccess\DBOptreden.cs" />
     <Compile Include="DataAccess\DBPodium.cs" />

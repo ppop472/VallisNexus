@@ -14,6 +14,5 @@ namespace VallisNexus.Models
         public DateTime createdAt { get; private set; }
         public DateTime updatedAt { get; private set; }
         public DateTime deletedAt { get; private set; }
-
     }
 }
