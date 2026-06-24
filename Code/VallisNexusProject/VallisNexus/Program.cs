@@ -21,14 +21,16 @@ namespace VallisNexus
             //test.VoegArtiestToe("MR. Kitty");
             //test.ArtiestVerwijderen("MR. Kitty");
             //test.ArtiestUpdaten("Mr.Kitty", "MR. Kitty");
-            test.GenreAanArtiestToevoegen("Christian", "1 2");
+            //test.GenreAanArtiestToevoegen("Christian", "1 2");          
 
             DBPodium_ORG test2 = new DBPodium_ORG();
             //test2.VoegPodiumToe("Side Podium2");
             //test2.PodiumUpdaten("Podium2","Side Podium2");
             //test2.PodiumVerwijderen("Podium2");
 
-            
+            DBArtiest test3 = new DBArtiest();
+            var test4 = test3.GetArtiesten();
+
 
             Console.ReadLine();
         }

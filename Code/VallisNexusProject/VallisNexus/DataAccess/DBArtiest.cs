@@ -8,6 +8,9 @@ using VallisNexus.Models;
 using Dapper;
 using DotNetEnv;
 using System.IO;
+using VallisNexus.DataAccess.CRUD_VOOR_ORG;
+using System.Net.Http.Headers;
+using System.Collections;
 
 namespace VallisNexus.DataAccess
 {
@@ -23,16 +26,43 @@ namespace VallisNexus.DataAccess
 
         public List<Artiest> GetArtiesten()
         {
-            string sql = "SELECT * FROM Artiest";       
+            DBGenre dBGenreq = new DBGenre();
+            List<Genre> genres = dBGenreq.GetGenres();
+
+            string sql = "SELECT * FROM Artiest";
             List<Artiest> artiestenLijst = new List<Artiest>();
+
             using (var connection = new SqlConnection(dbstring))
             {
                 IEnumerable<Artiest> query = connection.Query<Artiest>(sql);
+
                 foreach (var artiest in query)
                 {
+                    IEnumerable<ArtiestGenre> artiestGenreLijst = connection.Query<ArtiestGenre>(
+                        "SELECT * FROM ArtiestGenre WHERE ArtiestId = @artiestId",
+                        new { artiestId = artiest.id }
+                    );
+
+                    //artiest.genres = genres
+                    //    .Where(g => artiestGenreLijst.Any(ag => ag.GenreId == g.id))
+                    //    .ToList();
+
+                    //artiestenLijst.Add(artiest);
+                    foreach (var genre in genres)
+                    {
+                        foreach (var artiestGenre in artiestGenreLijst)
+                        {
+                            if (artiestGenre.GenreId == genre.id)
+                            {
+                                artiest.genres.Add(genre);
+                                break;
+                            }
+                        }
+                    }
                     artiestenLijst.Add(artiest);
                 }
             }
+
             return artiestenLijst;
         }
 

@@ -208,6 +208,7 @@
     <Compile Include="DataAccess\DBPodium.cs" />
     <Compile Include="Exceptions\Exception.cs" />
     <Compile Include="Models\Artiest.cs" />
+    <Compile Include="Models\ArtiestGenre.cs" />
     <Compile Include="Models\Gebruiker.cs" />
     <Compile Include="Models\Genre.cs" />
     <Compile Include="Models\Optreden.cs" />
