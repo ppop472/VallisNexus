@@ -15,16 +15,5 @@ namespace VallisNexus.Models
         public DateTime updatedAt { get; private set; }
         public DateTime deletedAt { get; private set; }
 
-
-
-        internal Artiest(string naam, int id)
-        {
-            this.naam = naam;
-            //this.Id = artiestId;
-
-            this.genres = new List<Genre>();
-        }
-
-
     }
 }
