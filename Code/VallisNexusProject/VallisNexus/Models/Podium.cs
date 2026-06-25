@@ -10,14 +10,6 @@ public class Podium
     public DateTime updatedAt { get; private set; }
     public DateTime deletedAt { get; private set; }
 
-
-    public Podium(string naam, string beschrijving)
-	{
-		this.naam = naam;
-		this.beschrijving = beschrijving;
-
-    }
-
     public void VoegOptredenToe(Optreden optreden)
     {
         

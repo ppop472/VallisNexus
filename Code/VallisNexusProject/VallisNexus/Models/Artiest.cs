@@ -10,21 +10,9 @@ namespace VallisNexus.Models
     {
         public string naam { get; private set; }
         public int id { get; private set; }
-        public List <Genre> genres { get; private set; }
+        public List <Genre> genres { get; set; } = new List<Genre>();
         public DateTime createdAt { get; private set; }
         public DateTime updatedAt { get; private set; }
         public DateTime deletedAt { get; private set; }
-
-
-
-        internal Artiest(string naam, int id)
-        {
-            this.naam = naam;
-            //this.Id = artiestId;
-
-            this.genres = new List<Genre>();
-        }
-
-
     }
 }
