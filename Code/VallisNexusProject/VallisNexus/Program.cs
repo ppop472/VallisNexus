@@ -14,8 +14,8 @@ namespace VallisNexus
     {
         static void Main(string[] args)
         {
-            //HoofdMenu hoofdMenu = new HoofdMenu();
-            //hoofdMenu.ToonHoofdMenu();
+            HoofdMenu hoofdMenu = new HoofdMenu();
+            hoofdMenu.ToonHoofdMenu();
 
             DBArtiest_ORG test = new DBArtiest_ORG();
             //test.VoegArtiestToe("MR. Kitty");
@@ -29,7 +29,7 @@ namespace VallisNexus
             //test2.PodiumVerwijderen("Podium2");
 
             DBArtiest test3 = new DBArtiest();
-            var test4 = test3.GetArtiesten();
+            //var test4 = test3.GetArtiesten();
 
 
             Console.ReadLine();
