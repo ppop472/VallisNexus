@@ -43,18 +43,46 @@ namespace VallisNexus.DataAccess.CRUD_VOOR_ORG
             }
         }
 
+        // 
         public List<Artiest> GetArtiesten()
         {
+            DBGenre dBGenreq = new DBGenre();
+            List<Genre> genres = dBGenreq.GetGenres();
+
             string sql = "SELECT * FROM Artiest";
             List<Artiest> artiestenLijst = new List<Artiest>();
+
             using (var connection = new SqlConnection(dbstring))
             {
                 IEnumerable<Artiest> query = connection.Query<Artiest>(sql);
+
                 foreach (var artiest in query)
                 {
+                    IEnumerable<ArtiestGenre> artiestGenreLijst = connection.Query<ArtiestGenre>(
+                        "SELECT * FROM ArtiestGenre WHERE ArtiestId = @artiestId and DeletedAt = NULL",
+                        new { artiestId = artiest.id }
+                    );
+
+                    //artiest.genres = genres
+                    //    .Where(g => artiestGenreLijst.Any(ag => ag.GenreId == g.id))
+                    //    .ToList();
+
+                    //artiestenLijst.Add(artiest);
+                    foreach (var genre in genres)
+                    {
+                        foreach (var artiestGenre in artiestGenreLijst)
+                        {
+                            if (artiestGenre.GenreId == genre.id)
+                            {
+                                artiest.genres.Add(genre);
+                                break;
+                            }
+                        }
+                    }
                     artiestenLijst.Add(artiest);
                 }
             }
+
             return artiestenLijst;
         }
 
@@ -86,7 +114,7 @@ namespace VallisNexus.DataAccess.CRUD_VOOR_ORG
                 object parameters = new { artiestId = artiest.id, genreId = genreNr};
                 using (var connection = new SqlConnection(dbstring))
                 {
-                    Artiest query = connection.QueryFirstOrDefault<Artiest>(sql, parameters);
+                    ArtiestGenre query = connection.QueryFirstOrDefault<ArtiestGenre>(sql, parameters);
                 }
             }
 
@@ -113,12 +141,14 @@ namespace VallisNexus.DataAccess.CRUD_VOOR_ORG
             }
         }
 
+
+        
         public bool ArtiestVerwijderen(string artiestNaam)
         {
             try
             {
-                string sql = "DELETE FROM Artiest WHERE Naam = @Naam";
-                object parameters = new { Naam = artiestNaam};
+                string sql = "UPDATE Artiest SET DeletedAt = @deletedAt WHERE Naam = @naam";
+                object parameters = new {deletedAt = DateTime.Now, Naam = artiestNaam};
                 using (var connection = new SqlConnection(dbstring))
                 {
                     IEnumerable<dynamic> query = connection.Query(sql, parameters);
@@ -128,7 +158,8 @@ namespace VallisNexus.DataAccess.CRUD_VOOR_ORG
             }
             catch (Exception ex)
             {
-                Console.WriteLine("nope");
+                Console.WriteLine(ex);  
+                
                 return false;
             }
         }
