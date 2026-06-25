@@ -214,8 +214,8 @@
     <Compile Include="Models\Optreden.cs" />
     <Compile Include="Models\OptredenDTO.cs" />
     <Compile Include="Models\Podium.cs" />
-    <Compile Include="Models\Programma_tonen.cs" />
     <Compile Include="Paginas\HoofdMenu.cs" />
+    <Compile Include="Paginas\ProgrammaTonen.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
