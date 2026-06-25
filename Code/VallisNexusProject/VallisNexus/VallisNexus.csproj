@@ -56,6 +56,9 @@
       <Private>True</Private>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="Superpower, Version=1.0.0.0, Culture=neutral, PublicKeyToken=aec39280ded1b3a7, processorArchitecture=MSIL">
       <HintPath>..\packages\Superpower.3.0.0\lib\netstandard2.0\Superpower.dll</HintPath>
     </Reference>
@@ -215,6 +218,7 @@
     <Compile Include="Models\OptredenDTO.cs" />
     <Compile Include="Models\Podium.cs" />
     <Compile Include="Paginas\HoofdMenu.cs" />
+    <Compile Include="Paginas\PersoonlijkProgramma.cs" />
     <Compile Include="Paginas\ProgrammaTonen.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
