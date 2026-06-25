@@ -11,15 +11,4 @@ public class Optreden
     public DateTime updatedAt { get; private set; }
     public DateTime deletedAt { get; private set; }
     
-    public Optreden(int Id, int ArtiestId, DateTime StartTijd, DateTime EindTijd, DateTime CreatedAt, DateTime UpdatedAt, DateTime DeletedAt, int PodiumId)
-    {
-        this.id = Id;
-        this.artiestId = ArtiestId;
-        this.starttijd = StartTijd;
-        this.createdAt = CreatedAt;
-        this.updatedAt = UpdatedAt;
-        this.deletedAt = DeletedAt;
-        this.podiumId = PodiumId;
-
-    }
 }
