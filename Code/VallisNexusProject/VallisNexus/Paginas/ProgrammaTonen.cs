@@ -16,18 +16,21 @@ namespace VallisNexus.Paginas
 
 
                 DBOptreden dbOptreden = new DBOptreden();
-                List<OptredenDTO> optredens = dbOptreden.GetOptreden();
+                List<Podium> podiums = dbOptreden.GetOptreden();
 
                 bool doorlopen = true;
 
-                foreach (var optreden in optredens)
+                foreach (var podium in podiums)
                 {
-                    Console.WriteLine($"Artiest: {optreden.artiestNaam}");
-                    Console.WriteLine($"Podium: {optreden.podiumNaam}");
-                    Console.WriteLine($"Starttijd: {optreden.starttijd}");
-                    Console.WriteLine($"Eindtijd: {optreden.eindtijd}");
-                    Console.WriteLine("---------------------------");
-                }
+                    Console.WriteLine($"Podium: {podium.naam}\n");
+                    foreach (var optreden in podium.optreden)
+                    {
+                        Console.WriteLine($"    Artiest: {optreden.artiestNaam}");
+                        Console.WriteLine($"    Starttijd: {optreden.starttijd}");
+                        Console.WriteLine($"    Eindtijd: {optreden.eindtijd}\n");
+                    }
+                Console.WriteLine("---------------------------");
+            }
 
             Console.WriteLine();
             Console.WriteLine("1. Persoonlijk schema");
