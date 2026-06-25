@@ -43,37 +43,6 @@ namespace VallisNexus.DataAccess
             }
 
             return podiumLijst;
-
-            //string sql = "SELECT * FROM Optreden";
-            //List<OptredenDTO> optredenDTOLijst = new List<OptredenDTO>();
-
-            //using (var connection = new SqlConnection(dbstring))
-            //{
-            //    IEnumerable<Optreden> query = connection.Query<Optreden>(sql);
-            //    foreach (var optreden in query)
-            //    {
-            //        DBArtiest dbArtiest = new DBArtiest();
-            //        DBPodium dbPodium = new DBPodium();
-
-            //        Artiest artiest = dbArtiest.GetArtiestMetId(optreden.artiestId);
-            //        Podium podium = dbPodium.GetPodiumMetId(optreden.podiumId);
-
-            //        OptredenDTO optredenDTO = new OptredenDTO(optreden.id,
-            //                                                  artiest.id,
-            //                                                  optreden.starttijd,
-            //                                                  optreden.eindtijd,
-            //                                                  optreden.createdAt,
-            //                                                  optreden.updatedAt,
-            //                                                  optreden.deletedAt,
-            //                                                  podium.id,
-            //                                                  artiest.naam,
-            //                                                  podium.naam);
-            //        optredenDTOLijst.Add (optredenDTO);
-            //    }
-            //} 
-            //return optredenDTOLijst;
-
-            
         }
     }
 }
