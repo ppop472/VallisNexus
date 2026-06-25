@@ -30,8 +30,43 @@ public class HoofdMenu
         
             while (doorlopen)
             {
-                Console.WriteLine("Welkom bij het hoofdmenu!\n 1. Programma tonen\n 2. Persoonlijk schema\n 3. Toon plattegrond\n 4. Meer informatie\n 5. Programma sluiten\n Maak uw keuze: ");
-                string keuze = Console.ReadLine();
+                Console.ForegroundColor = ConsoleColor.White;
+                Console.WriteLine("==================");
+                Console.ForegroundColor = ConsoleColor.Magenta;
+                Console.WriteLine("VALLIS NEXUS");
+                Console.ForegroundColor = ConsoleColor.White;
+                Console.WriteLine("==================");
+                Console.ForegroundColor = ConsoleColor.Green;
+                Console.WriteLine("Welkom bij het hoofdmenu!");
+
+                Console.ForegroundColor = ConsoleColor.Green;
+                Console.Write("1. ");
+                Console.ForegroundColor = ConsoleColor.White;
+                Console.WriteLine("Programma tonen");
+
+                Console.ForegroundColor = ConsoleColor.Green;
+                Console.Write("2. ");
+                Console.ForegroundColor = ConsoleColor.White;
+                Console.WriteLine("Persoonlijk schema");
+
+                Console.ForegroundColor = ConsoleColor.Green;
+                Console.Write("3. ");
+                Console.ForegroundColor = ConsoleColor.White;
+                Console.WriteLine("Toon plattegrond");
+
+                Console.ForegroundColor = ConsoleColor.Green;
+                Console.Write("4. ");
+                Console.ForegroundColor = ConsoleColor.White;
+                Console.WriteLine("Meer informatie");
+
+                Console.ForegroundColor = ConsoleColor.Green;
+                Console.Write("5. ");
+                Console.ForegroundColor = ConsoleColor.White;
+                Console.WriteLine("Programma sluiten");
+
+                Console.Write("\nMaak uw keuze: ");
+                Console.ResetColor();
+            string keuze = Console.ReadLine();
 
 
             if (keuze != "1" &&
