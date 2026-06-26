@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using VallisNexus.DataAccess;
 using VallisNexus.DataAccess.CRUD_VOOR_ORG;
 using VallisNexus.Models;
+using System.Drawing;
 
 namespace VallisNexus
 {
@@ -16,6 +17,8 @@ namespace VallisNexus
         {
             HoofdMenu hoofdMenu = new HoofdMenu();
             hoofdMenu.ToonHoofdMenu();
+
+            Bitmap bitmap = new Bitmap("Images/PLATTE GROND VALLIS NEXUS.png");
 
             DBArtiest_ORG test = new DBArtiest_ORG();
             //test.VoegArtiestToe("MR. Kitty");
