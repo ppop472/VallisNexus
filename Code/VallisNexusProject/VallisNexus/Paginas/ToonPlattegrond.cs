@@ -26,66 +26,63 @@ namespace VallisNexus.Paginas
 
 
             //Dit toont voorlopig de plattegrond in image viewer totdat we de ascii art opgelost hebben.
-            //  string path = Path.Combine(
+            string path = Path.Combine(
+              AppDomain.CurrentDomain.BaseDirectory,"Images","plattegrond3.png");
+
+            if (File.Exists(path))
+            {
+                Process.Start(new ProcessStartInfo
+                {
+                    FileName = path,
+                    UseShellExecute = true
+                });
+            }
+            else
+            {
+                Console.WriteLine("Image niet gevonden: " + path);
+            }
+
+            //BITMAP IMAGES, werkt niet fatsoenlijk
+
+            //int newWidth = 50;
+
+            //string path = Path.Combine(
             //    AppDomain.CurrentDomain.BaseDirectory,
             //    "Images",
             //    "plattegrond.png"
             //);
 
-            //  if (File.Exists(path))
-            //  {
-            //      Process.Start(new ProcessStartInfo
-            //      {
-            //          FileName = path,
-            //          UseShellExecute = true
-            //      });
-            //  }
-            //  else
-            //  {
-            //      Console.WriteLine("Image niet gevonden: " + path);
-            //  }
+            //if (!File.Exists(path))
+            //{
+            //    Console.WriteLine("❌ Image niet gevonden");
+            //    return;
+            //}
 
+            //Bitmap image = new Bitmap(path);
 
+            ////Resize image
+            //Bitmap resized = new Bitmap(
+            //    image,
+            //    new Size(newWidth, (int)(image.Height / (double)image.Width * newWidth))
+            //);
 
-            int newWidth = 150;
+            //image.Dispose(); // originele vrijgeven
 
-            string path = Path.Combine(
-                AppDomain.CurrentDomain.BaseDirectory,
-                "Images",
-                "plattegrond2.png"
-            );
+            //for (int y = 0; y < resized.Height; y += 2)
+            //{
+            //    for (int x = 0; x < resized.Width; x++)
+            //    {
+            //        Color pixel = resized.GetPixel(x, y);
 
-            if (!File.Exists(path))
-            {
-                Console.WriteLine("❌ Image niet gevonden");
-                return;
-            }
+            //        int brightness = (pixel.R + pixel.G + pixel.B) / 3;
 
-            Bitmap image = new Bitmap(path);
+            //        Console.Write(brightness > 128 ? " " : "#");
+            //    }
 
-            //Resize image
-            Bitmap resized = new Bitmap(
-                image,
-                new Size(newWidth, (int)(image.Height / (double)image.Width * newWidth))
-            );
+            //    Console.WriteLine();
+            //}
 
-            image.Dispose(); // originele vrijgeven
-
-            for (int y = 0; y < resized.Height; y += 2)
-            {
-                for (int x = 0; x < resized.Width; x++)
-                {
-                    Color pixel = resized.GetPixel(x, y);
-
-                    int brightness = (pixel.R + pixel.G + pixel.B) / 3;
-
-                    Console.Write(brightness > 128 ? " " : "#");
-                }
-
-                Console.WriteLine();
-            }
-
-            resized.Dispose();
+            //resized.Dispose();
 
 
             bool plattegrondTonen = true;
