@@ -6,6 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Drawing;
 
 namespace VallisNexus.Paginas
 {
@@ -13,6 +14,7 @@ namespace VallisNexus.Paginas
     {
         public void PlattegrondTonen()
         {
+            
 
             //Geeft console text kleur
             Console.ForegroundColor = ConsoleColor.White;
