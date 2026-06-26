@@ -8,14 +8,7 @@ namespace VallisNexus.Models
 {
     public class OptredenDTO : Optreden
     {
-
         public string artiestNaam { get;  set; }
 
     }
-
-    //internal class OptredenDTO : Optreden
-    //{
-    //    public List<Podium> podiums { get; set; }
-
-    //}
 }
