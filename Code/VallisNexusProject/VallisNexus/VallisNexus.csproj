@@ -235,9 +235,10 @@
     <Content Include="Images\plattegrond.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Images\plattegrond3.png" />
   </ItemGroup>
   <ItemGroup>
-     <Reference Include="System.Drawing" />
+    <Reference Include="System.Drawing" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
