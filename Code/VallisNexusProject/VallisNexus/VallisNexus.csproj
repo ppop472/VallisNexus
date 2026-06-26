@@ -222,6 +222,7 @@
     <Compile Include="Models\OptredenDTO.cs" />
     <Compile Include="Models\Podium.cs" />
     <Compile Include="Paginas\HoofdMenu.cs" />
+    <Compile Include="Paginas\MeerInformatie.cs" />
     <Compile Include="Paginas\PersoonlijkProgramma.cs" />
     <Compile Include="Paginas\ProgrammaTonen.cs" />
     <Compile Include="Paginas\ToonPlattegrond.cs" />
