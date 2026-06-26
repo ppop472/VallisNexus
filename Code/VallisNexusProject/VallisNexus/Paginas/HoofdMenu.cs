@@ -47,12 +47,13 @@ public class HoofdMenu
                 Console.ForegroundColor = ConsoleColor.White;
                 Console.WriteLine("==================");
                 Console.ForegroundColor = ConsoleColor.Green;
-                Console.WriteLine("\nMaak uw keuze: ");
-                
+                Console.Write("Maak uw keuze: ");
+                string keuze = Console.ReadLine();
+
                 Console.ForegroundColor = ConsoleColor.White;
                 Console.WriteLine("==================");
                 Console.ResetColor();
-                string keuze = Console.ReadLine();
+                //string keuze = Console.ReadLine();
 
 
             if (keuze != "1" &&
