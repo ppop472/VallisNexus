@@ -31,6 +31,9 @@ namespace VallisNexus
             DBArtiest test3 = new DBArtiest();
             //var test4 = test3.GetArtiesten();
 
+            DBOptreden_ORG dBOptreden = new DBOptreden_ORG();
+
+            //var test5 = dBOptreden.VoegOptredenToeg(1, 1, new DateTime(2026,7,30,03,30,0,0), new DateTime(2026, 07, 30, 04, 30, 0, 0));
 
             Console.ReadLine();
         }
