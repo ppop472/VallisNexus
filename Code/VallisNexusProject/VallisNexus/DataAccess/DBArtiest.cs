@@ -29,7 +29,7 @@ namespace VallisNexus.DataAccess
             DBGenre dBGenreq = new DBGenre();
             List<Genre> genres = dBGenreq.GetGenres();
 
-            string sql = "SELECT * FROM Artiest";
+            string sql = "SELECT * FROM Artiest WHERE DeletedAt IS NULL";
             List<Artiest> artiestenLijst = new List<Artiest>();
 
             using (var connection = new SqlConnection(dbstring))
@@ -39,7 +39,7 @@ namespace VallisNexus.DataAccess
                 foreach (var artiest in query)
                 {
                     IEnumerable<ArtiestGenre> artiestGenreLijst = connection.Query<ArtiestGenre>(
-                        "SELECT * FROM ArtiestGenre WHERE ArtiestId = @artiestId",
+                        "SELECT * FROM ArtiestGenre WHERE ArtiestId = @artiestId WHERE DeletedAt IS NULL",
                         new { artiestId = artiest.id }
                     );
 
@@ -68,7 +68,7 @@ namespace VallisNexus.DataAccess
 
         public Artiest GetArtiestMetId(int id)
         {
-            string sql = "SELECT * FROM Artiest WHERE id = @id";
+            string sql = "SELECT * FROM Artiest WHERE id = @id AND DeletedAt IS NULL";
             object parameters = new {id = id };           
             using (var connection = new SqlConnection(dbstring))
             {
@@ -79,7 +79,7 @@ namespace VallisNexus.DataAccess
 
         public Artiest GetArtiestMetNaam(string artiestNaam)
         {
-            string sql = "SELECT * FROM Artiest WHERE Naam = @naam";
+            string sql = "SELECT * FROM Artiest WHERE Naam = @naam AND DeletedAt IS NULL";
             object parameters = new { naam = artiestNaam };
             using (var connection = new SqlConnection(dbstring))
             {

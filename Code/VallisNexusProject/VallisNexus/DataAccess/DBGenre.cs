@@ -21,7 +21,7 @@ namespace VallisNexus.DataAccess.CRUD_VOOR_ORG
 
         public List<Genre> GetGenres()
         {
-            string sql = "SELECT * FROM Genre";
+            string sql = "SELECT * FROM Genre WHERE DeletedAt IS NULL";
             List<Genre> genreLijst = new List<Genre>();
             using (var connection = new SqlConnection(dbstring))
             {

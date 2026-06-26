@@ -22,7 +22,7 @@ namespace VallisNexus.DataAccess
 
         public List<Podium> GetPodium()
         {
-            string sql = "SELECT * FROM Podium";
+            string sql = "SELECT * FROM Podium WHERE DeletedAt IS NULL";
             List<Podium> podiumLijst = new List<Podium>();
             using (var connection = new SqlConnection(dbstring))
             {
@@ -37,7 +37,7 @@ namespace VallisNexus.DataAccess
 
         public Podium GetPodiumMetId(int id)
         {
-            string sql = "SELECT * FROM Podium WHERE id = @id";
+            string sql = "SELECT * FROM Podium WHERE id = @id WHERE DeletedAt IS NULL";
             object parameters = new { id = id };
             using (var connection = new SqlConnection(dbstring))
             {
