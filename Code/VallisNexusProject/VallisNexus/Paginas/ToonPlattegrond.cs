@@ -27,7 +27,7 @@ namespace VallisNexus.Paginas
 
             //Dit toont voorlopig de plattegrond in image viewer totdat we de ascii art opgelost hebben.
             string path = Path.Combine(
-              AppDomain.CurrentDomain.BaseDirectory,"Images","plattegrond3.png");
+              AppDomain.CurrentDomain.BaseDirectory,"Images","plattegrond.png");
 
             if (File.Exists(path))
             {
