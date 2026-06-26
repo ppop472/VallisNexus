@@ -141,18 +141,21 @@ namespace VallisNexus.DataAccess.CRUD_VOOR_ORG
             }
         }
 
-
-        
         public bool ArtiestVerwijderen(string artiestNaam)
         {
             try
             {
-                string sql = "UPDATE Artiest SET DeletedAt = @deletedAt WHERE Naam = @naam";
+                DBArtiest dbArtiest = new DBArtiest();
+                Artiest artiest = dbArtiest.GetArtiestMetNaam(artiestNaam);
+
+                string sql = "UPDATE Artiest SET DeletedAt = @deletedAt WHERE Naam = @Naam";
                 object parameters = new {deletedAt = DateTime.Now, Naam = artiestNaam};
                 using (var connection = new SqlConnection(dbstring))
                 {
                     IEnumerable<dynamic> query = connection.Query(sql, parameters);
                 }
+                DBOptreden_ORG dbGenre_ORG = new DBOptreden_ORG();
+                dbGenre_ORG.OptredenVerwijderenBijArtiestVerwijdering(artiest.id);
                 Console.WriteLine("gelukt");
                 return true;
             }

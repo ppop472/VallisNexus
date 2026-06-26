@@ -204,10 +204,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DataAccess\CRUD_VOOR_ORG\DBArtiest_ORG.cs" />
-    <Compile Include="DataAccess\CRUD_VOOR_ORG\DBGenre.cs" />
+    <Compile Include="DataAccess\DBGenre.cs" />
     <Compile Include="DataAccess\CRUD_VOOR_ORG\DBOptreden_ORG.cs" />
     <Compile Include="DataAccess\CRUD_VOOR_ORG\DBPodium_ORG.cs" />
+    <Compile Include="DataAccess\CRUD_VOOR_ORG\DBTickets_ORG.cs" />
     <Compile Include="DataAccess\DBArtiest.cs" />
+    <Compile Include="DataAccess\CRUD_VOOR_ORG\DBGenre_ORG.cs" />
     <Compile Include="DataAccess\DBOptreden.cs" />
     <Compile Include="DataAccess\DBPodium.cs" />
     <Compile Include="Exceptions\Exception.cs" />
@@ -218,6 +220,7 @@
     <Compile Include="Models\Optreden.cs" />
     <Compile Include="Models\OptredenDTO.cs" />
     <Compile Include="Models\Podium.cs" />
+    <Compile Include="Models\Ticket.cs" />
     <Compile Include="Paginas\HoofdMenu.cs" />
     <Compile Include="Paginas\MeerInformatie.cs" />
     <Compile Include="Paginas\PersoonlijkProgramma.cs" />

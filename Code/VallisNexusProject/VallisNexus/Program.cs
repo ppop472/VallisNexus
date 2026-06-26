@@ -20,7 +20,7 @@ namespace VallisNexus
 
             DBArtiest_ORG test = new DBArtiest_ORG();
             //test.VoegArtiestToe("MR. Kitty");
-            //test.ArtiestVerwijderen("MR. Kitty");
+            test.ArtiestVerwijderen("Christian");
             //test.ArtiestUpdaten("Mr.Kitty", "MR. Kitty");
             //test.GenreAanArtiestToevoegen("Christian", "1 2");          
 
@@ -36,6 +36,16 @@ namespace VallisNexus
 
             //var test5 = dBOptreden.VoegOptredenToeg(1, 1, new DateTime(2026,7,30,03,30,0,0), new DateTime(2026, 07, 30, 04, 30, 0, 0));
 
+            DBTickets_ORG dBTickets = new DBTickets_ORG();
+            //var test6 = dBTickets.TicketAanmaken("VIP Ticket", 129.50);
+            //var test7 = dBTickets.TicketAanmaken("Regular Ticket", 79.50);
+            //var test8 = dBTickets.TicketAanmaken("Combo Ticket (2 per.)", 149.00);
+            //var test9 = dBTickets.GetTicket();
+
+            DBGenre_ORG dbGenre_ORG = new DBGenre_ORG();
+            //var test10 = dbGenre_ORG.VoegGenresToe("Rap");
+            //var test11 = dbGenre_ORG.GenresUpdaten("Techno", "Rap");
+            //var test12 = dbGenre_ORG.GenresVerwijderen("Techno");
             Console.ReadLine();
         }
     }

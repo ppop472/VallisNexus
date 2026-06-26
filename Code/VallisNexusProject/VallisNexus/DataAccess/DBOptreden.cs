@@ -29,7 +29,7 @@ namespace VallisNexus.DataAccess
             {
                 using (var connection = new SqlConnection(dbstring))
                 {
-                    string sql = "  SELECT * FROM Optreden WHERE PodiumId = @podiumId ORDER BY StartTijd";
+                    string sql = "  SELECT * FROM Optreden WHERE PodiumId = @podiumId AND DeletedAt IS NULL ORDER BY StartTijd";
                     object parameters = new { podiumId = podium.id };
                     IEnumerable<OptredenDTO> query = connection.Query<OptredenDTO>(sql,parameters);
                     foreach (var optreden in query)
@@ -37,7 +37,10 @@ namespace VallisNexus.DataAccess
                         podium.optreden.Add(optreden);
                         DBArtiest dbArtiest = new DBArtiest();
                         Artiest artiest = dbArtiest.GetArtiestMetId(optreden.artiestId);
-                        optreden.artiestNaam = artiest.naam;
+                        if(artiest != null)
+                        {
+                            optreden.artiestNaam = artiest.naam;
+                        }
                     }
                 }
             }

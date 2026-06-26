@@ -40,5 +40,21 @@ namespace VallisNexus.DataAccess.CRUD_VOOR_ORG
                 return false;
             }
         }
+
+        public void OptredenVerwijderenBijArtiestVerwijdering(int artiestId)
+        {
+            try
+            {
+                string sql = "UPDATE Optreden SET DeletedAt = @Now WHERE ArtiestId = @artiestId";
+                object parameters = new { artiestId = artiestId, Now = DateTime.Now };
+                using (var connection = new SqlConnection(dbstring))
+                {
+                    Genre query = connection.QueryFirstOrDefault<Genre>(sql, parameters);
+                }
+            }
+            catch (Exception ex)
+            {
+            }
+        }
     }
 }
