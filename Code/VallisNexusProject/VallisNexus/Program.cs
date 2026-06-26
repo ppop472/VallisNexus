@@ -18,7 +18,7 @@ namespace VallisNexus
             HoofdMenu hoofdMenu = new HoofdMenu();
             hoofdMenu.ToonHoofdMenu();
 
-            Bitmap bitmap = new Bitmap("Images/PLATTE GROND VALLIS NEXUS.png");
+            Bitmap bitmap = new Bitmap("Images/plattegrond.png");
 
             DBArtiest_ORG test = new DBArtiest_ORG();
             //test.VoegArtiestToe("MR. Kitty");
