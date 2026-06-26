@@ -14,7 +14,7 @@ namespace VallisNexus.Paginas
     {
         public void PlattegrondTonen()
         {
-            
+
 
             //Geeft console text kleur
             Console.ForegroundColor = ConsoleColor.White;
@@ -26,41 +26,66 @@ namespace VallisNexus.Paginas
 
 
             //Dit toont voorlopig de plattegrond in image viewer totdat we de ascii art opgelost hebben.
+            //  string path = Path.Combine(
+            //    AppDomain.CurrentDomain.BaseDirectory,
+            //    "Images",
+            //    "plattegrond.png"
+            //);
+
+            //  if (File.Exists(path))
+            //  {
+            //      Process.Start(new ProcessStartInfo
+            //      {
+            //          FileName = path,
+            //          UseShellExecute = true
+            //      });
+            //  }
+            //  else
+            //  {
+            //      Console.WriteLine("Image niet gevonden: " + path);
+            //  }
+
+
+
+            int newWidth = 150;
+
             string path = Path.Combine(
-              AppDomain.CurrentDomain.BaseDirectory,
-              "Images",
-              "plattegrond.png"
-          );
+                AppDomain.CurrentDomain.BaseDirectory,
+                "Images",
+                "plattegrond2.png"
+            );
 
-            if (File.Exists(path))
+            if (!File.Exists(path))
             {
-                Process.Start(new ProcessStartInfo
+                Console.WriteLine("❌ Image niet gevonden");
+                return;
+            }
+
+            Bitmap image = new Bitmap(path);
+
+            //Resize image
+            Bitmap resized = new Bitmap(
+                image,
+                new Size(newWidth, (int)(image.Height / (double)image.Width * newWidth))
+            );
+
+            image.Dispose(); // originele vrijgeven
+
+            for (int y = 0; y < resized.Height; y += 2)
+            {
+                for (int x = 0; x < resized.Width; x++)
                 {
-                    FileName = path,
-                    UseShellExecute = true
-                });
+                    Color pixel = resized.GetPixel(x, y);
+
+                    int brightness = (pixel.R + pixel.G + pixel.B) / 3;
+
+                    Console.Write(brightness > 128 ? " " : "#");
+                }
+
+                Console.WriteLine();
             }
-            else
-            {
-                Console.WriteLine("Image niet gevonden: " + path);
-            }
 
-
-
-            //Bitmap image = new Bitmap(".\\VallisNexus\\Code\\VallisNexusProject\\VallisNexus\\Images\\PLATTE GROND VALLIS NEXUS.png");
-
-            //for (int y = 0; y < image.Height; y += 2)
-            //{
-            //    for (int x = 0; x < image.Width; x++)
-            //    {
-            //        Color pixel = image.GetPixel(x, y);
-
-            //        int brightness = (pixel.R + pixel.G + pixel.B) / 3;
-
-            //        Console.Write(brightness > 128 ? " " : "#");
-            //    }
-            //    Console.WriteLine();
-            //}
+            resized.Dispose();
 
 
             bool plattegrondTonen = true;
@@ -89,7 +114,10 @@ namespace VallisNexus.Paginas
         }
     }
 
-}   
+}
+
+
+
 
 
  
