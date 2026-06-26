@@ -44,7 +44,12 @@ public class HoofdMenu
                 Console.ForegroundColor = ConsoleColor.White;
                 Console.WriteLine("Programma sluiten");
 
-                Console.Write("\nMaak uw keuze: ");
+                Console.ForegroundColor = ConsoleColor.White;
+                Console.WriteLine("==================");
+                Console.ForegroundColor = ConsoleColor.Green;
+                Console.WriteLine("\nMaak uw keuze: ");
+                Console.ForegroundColor = ConsoleColor.White;
+                Console.WriteLine("==================");
                 Console.ResetColor();
             string keuze = Console.ReadLine();
 
@@ -73,6 +78,13 @@ public class HoofdMenu
                 Console.Clear();
                 plattegrond.PlattegrondTonen();
                 
+            }
+
+            if (keuze == "4")
+            {
+                MeerInformatie meerInformatie = new MeerInformatie();
+                Console.Clear();
+                meerInformatie.ToonMeerInformatie();
             }
 
 
