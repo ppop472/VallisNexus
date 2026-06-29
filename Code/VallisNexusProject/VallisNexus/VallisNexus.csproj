@@ -230,8 +230,8 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include=".env" />
     <None Include="App.config" />
+    <None Include=".env" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
@@ -251,5 +251,6 @@
   <ItemGroup>
     <Reference Include="System.Drawing" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

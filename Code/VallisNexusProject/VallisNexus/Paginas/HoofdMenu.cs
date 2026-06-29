@@ -67,7 +67,7 @@ public class HoofdMenu
             }
 
             if (keuze == "1")
-                {
+            {
                     ProgrammaTonen programmatonen = new ProgrammaTonen();
                     Console.Clear();
                     programmatonen.ToonProgramma();

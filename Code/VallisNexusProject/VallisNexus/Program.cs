@@ -46,6 +46,7 @@ namespace VallisNexus
             //var test10 = dbGenre_ORG.VoegGenresToe("Rap");
             //var test11 = dbGenre_ORG.GenresUpdaten("Techno", "Rap");
             //var test12 = dbGenre_ORG.GenresVerwijderen("Techno");
+
             Console.ReadLine();
         }
     }
