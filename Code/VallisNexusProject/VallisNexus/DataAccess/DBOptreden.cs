@@ -34,7 +34,7 @@ namespace VallisNexus.DataAccess
                     IEnumerable<OptredenDTO> query = connection.Query<OptredenDTO>(sql,parameters);
                     foreach (var optreden in query)
                     {
-                        podium.Optredens.Add(optreden);
+                        podium.optredens.Add(optreden);
                         DBArtiest dbArtiest = new DBArtiest();
                         Artiest artiest = dbArtiest.GetArtiestMetId(optreden.artiestId);
                         if(artiest != null)
