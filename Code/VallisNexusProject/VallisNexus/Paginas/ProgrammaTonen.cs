@@ -15,6 +15,13 @@ namespace VallisNexus.Paginas
             {
                 Console.Clear();
 
+                Console.ForegroundColor = ConsoleColor.White;
+                Console.WriteLine("==================");
+                Console.ForegroundColor = ConsoleColor.Magenta;
+                Console.WriteLine("Programma");
+                Console.ForegroundColor = ConsoleColor.White;
+                Console.WriteLine("==================");
+
                 DBOptreden dbOptreden = new DBOptreden();
                 List<Podium> podiums = dbOptreden.GetOptreden();
 
@@ -45,9 +52,21 @@ namespace VallisNexus.Paginas
                 }
 
                 Console.WriteLine();
-                Console.WriteLine("1. Voeg optreden toe aan persoonlijk schema");
-                Console.WriteLine("2. Persoonlijk programma bekijken");
-                Console.WriteLine("3. Terug naar hoofdmenu");
+                Console.ForegroundColor = ConsoleColor.Green;
+                Console.Write("1.");
+                Console.ForegroundColor = ConsoleColor.White;
+                Console.WriteLine("Voeg optreden toe aan persoonlijk schema");
+                Console.ForegroundColor = ConsoleColor.Green;
+                Console.Write("2.");
+                Console.ForegroundColor = ConsoleColor.White;
+                Console.WriteLine("Persoonlijk programma bekijken");
+                Console.ForegroundColor = ConsoleColor.Green;
+                Console.Write("3.");
+                Console.ForegroundColor = ConsoleColor.White;
+                Console.WriteLine("Terug naar hoofdmenu");
+                Console.ForegroundColor = ConsoleColor.White;
+                Console.WriteLine("==================");
+                Console.ForegroundColor = ConsoleColor.Green;
                 Console.Write("Maak uw keuze: ");
 
                 string keuze = Console.ReadLine();
