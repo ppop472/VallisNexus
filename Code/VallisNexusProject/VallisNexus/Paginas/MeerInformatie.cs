@@ -157,7 +157,8 @@ namespace VallisNexus.Paginas
                 }
             }
             HoofdMenu hoofdmenu = new HoofdMenu();
-            hoofdmenu.ToonHoofdMenu();
+            hoofdmenu.ToonHoofdMenu(); 
+
         } 
 
     }
