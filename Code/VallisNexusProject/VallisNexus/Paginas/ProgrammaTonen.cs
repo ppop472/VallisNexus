@@ -24,17 +24,22 @@ namespace VallisNexus.Paginas
                 foreach (var podium in podiums)
                 {
                     Console.WriteLine($"Podium: {podium.naam}\n");
-
-                    foreach (var optreden in podium.optreden)
+                    if(podium.optreden.Count == 0)
                     {
-                        Console.WriteLine($"{teller}. {optreden.artiestNaam}");
-                        Console.WriteLine($"   Starttijd: {optreden.starttijd}");
-                        Console.WriteLine($"   Eindtijd: {optreden.eindtijd}\n");
-
-                        alleOptredens.Add(optreden);
-                        teller++;
+                        Console.WriteLine($"Er zijn geen optredens.\n");
                     }
+                    else
+                    {
+                        foreach (var optreden in podium.optreden)
+                        {
+                            Console.WriteLine($"    {teller}. {optreden.artiestNaam}");
+                            Console.WriteLine($"   Starttijd: {optreden.starttijd}");
+                            Console.WriteLine($"   Eindtijd: {optreden.eindtijd}\n");
 
+                            alleOptredens.Add(optreden);
+                            teller++;
+                        }
+                    }
                     Console.WriteLine("---------------------------");
                 }
 
