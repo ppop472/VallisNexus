@@ -25,7 +25,7 @@ namespace VallisNexus.Paginas
                 {
                     Console.WriteLine($"Podium: {podium.naam}\n");
 
-                    foreach (var optreden in podium.optreden)
+                    foreach (var optreden in podium.Optredens)
                     {
                         Console.WriteLine($"{teller}. {optreden.artiestNaam}");
                         Console.WriteLine($"   Starttijd: {optreden.starttijd}");
