@@ -62,7 +62,8 @@ public class HoofdMenu
                 keuze != "4" &&
                 keuze != "5")
             {
-                Console.WriteLine("Ongeldige keuze. Probeer opnieuw.\n--------------------------------------------------\n");
+                Console.WriteLine("Ongeldige keuze. Probeer opnieuw. Druk op een knop om verder te gaan.\n--------------------------------------------------------------------------\n");
+                Console.ReadKey();
                 continue;
             }
 

@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using VallisNexus.DataAccess;
+using VallisNexus.Models;
 
 namespace VallisNexus.Paginas
 {
@@ -56,33 +58,102 @@ namespace VallisNexus.Paginas
             while (informatieTonen)
             {
                 string keuzeInvoer = Console.ReadLine();
+                MeerInformatie meerInformatie = new MeerInformatie();
                 if (keuzeInvoer == "1")
                 {
-                    Console.WriteLine("Tickets");
-
-
+                    Console.Clear();
+                    Console.WriteLine(@"
++------------------------------------------------------------------+
+|                            TICKETS                               |
++------------------------------------------------------------------+");
+                    DBTicket dbTicket = new DBTicket();
+                    List<Ticket> tickets = dbTicket.GetTicket();
+                    foreach (Ticket ticket in tickets)
+                    {
+                        Console.WriteLine($"Ticket: {ticket.naam}, Prijs: {ticket.prijs}\n");
+                      
+                    }
+                    Console.WriteLine("==============================================================\n");
+                    meerInformatie.ToonMeerInformatie();
                 }
                 if (keuzeInvoer == "2")
                 {
-                    Console.WriteLine("Bereikbaarheid");
+                    Console.Clear();
+                    Console.WriteLine(@"
++------------------------------------------------------------------+
+|                         BEREIKBAARHEID                           |
++------------------------------------------------------------------+");
+                    Console.WriteLine("Adres: Heerlen, Nederland, VallisNexusStraat 67\n");
+                    Console.WriteLine("Openbaar vervoer: Met de trein naar station Heerlen, vanaf daar is het 10 minuten lopen naar het festivalterrein, of 3 minuten met buslijn 67.\n");
+                    Console.WriteLine("==============================================================\n");
+                    meerInformatie.ToonMeerInformatie();
                 }
                 if (keuzeInvoer == "3")
                 {
-                    Console.WriteLine("Parkeren");
+                    Console.Clear();
+                    Console.WriteLine(@"
++------------------------------------------------------------------+
+|                            PARKEREN                              |
++------------------------------------------------------------------+");
+                    Console.WriteLine("Er zijn verschillende parkeermogelijkheden beschikbaar in de buurt van het festivalterrein.\nParkeren is gratis en wordt aangegeven met borden.");
+                    Console.WriteLine("==============================================================\n");
+                    meerInformatie.ToonMeerInformatie();
                 }
                 if (keuzeInvoer == "4")
                 {
+                    Console.Clear();
                     Console.WriteLine("Huisregels");
+                    Console.Clear();
+
+                    Console.WriteLine(@"
++------------------------------------------------------------------+
+|                           HUISREGELS                             |
++------------------------------------------------------------------+
+1. Volg altijd de aanwijzingen van de beveiliging en het festivalpersoneel op.
+
+2. Behandel andere bezoekers met respect. Discriminatie, agressie en intimidatie worden niet getolereerd.
+
+3. Het meenemen van wapens, drugs, vuurwerk en andere gevaarlijke voorwerpen is verboden.
+
+4. Eigen eten en drinken meenemen is niet toegestaan.
+
+5. Alcohol wordt uitsluitend geschonken aan bezoekers van 18 jaar en ouder. Legitimeren kan worden gevraagd.
+
+6. Houd het festivalterrein schoon en deponeer afval in de daarvoor bestemde afvalbakken.
+
+7. Het beklimmen van hekken, podia, lichtmasten of andere constructies is niet toegestaan.
+
+8. Roken en vapen is alleen toegestaan in de daarvoor aangewezen zones.
+
+9. Bezoekers betreden het festivalterrein op eigen risico. De organisatie is niet aansprakelijk voor verlies, diefstal of schade aan persoonlijke eigendommen.
+
+10. Bij overtreding van de huisregels of verstoring van de openbare orde kan de toegang tot het festival zonder restitutie van het ticket worden ontzegd.
+
+11. Zorg ervoor dat nooduitgangen en vluchtroutes altijd vrij blijven.
+
+12. Geniet van het festival, respecteer elkaar en maak er samen een onvergetelijke dag van!
+                    
+                    ");
+                    Console.WriteLine("==============================================================\n");
+                    meerInformatie.ToonMeerInformatie();
                 }
                 if (keuzeInvoer == "5")
                 {
-                    Console.WriteLine("Contact");
+                    Console.Clear();
+                    Console.WriteLine(@"
++------------------------------------------------------------------+
+|                             CONTACT                              |
++------------------------------------------------------------------+");
+                    Console.WriteLine("Email: info@vallisnexus.nl\n");
+                    Console.WriteLine("Telefoon: +31 123 456 789");
+                    Console.WriteLine("==============================================================\n");
+                    meerInformatie.ToonMeerInformatie();
                 }
                 if (keuzeInvoer == "6")
                 {
                     Console.WriteLine("Je gaat nu terug naar hoofdmenu");
                     Console.Clear();
-                    break;
+                    informatieTonen = false;
                 }
             }
 
