@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using VallisNexus.DataAccess;
 using VallisNexus.Models;
-
+using VallisNexus.Paginas;
 namespace VallisNexus.Paginas
 {
     public class MeerInformatie
@@ -95,7 +95,7 @@ namespace VallisNexus.Paginas
 +------------------------------------------------------------------+
 |                            PARKEREN                              |
 +------------------------------------------------------------------+");
-                    Console.WriteLine("Er zijn verschillende parkeermogelijkheden beschikbaar in de buurt van het festivalterrein.\nParkeren is gratis en wordt aangegeven met borden.");
+                    Console.WriteLine("Er zijn verschillende parkeermogelijkheden beschikbaar in de buurt van het festivalterrein.\n\nParkeren is gratis en wordt aangegeven met borden.");
                     Console.WriteLine("==============================================================\n");
                     meerInformatie.ToonMeerInformatie();
                 }
@@ -156,8 +156,10 @@ namespace VallisNexus.Paginas
                     informatieTonen = false;
                 }
             }
+            HoofdMenu hoofdmenu = new HoofdMenu();
+            hoofdmenu.ToonHoofdMenu(); 
 
-        }
+        } 
 
     }
 }

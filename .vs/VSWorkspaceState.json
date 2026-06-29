@@ -6,8 +6,9 @@
     "\\Code\\VallisNexusProject\\VallisNexus",
     "\\Code\\VallisNexusProject\\VallisNexus\\DataAccess",
     "\\Code\\VallisNexusProject\\VallisNexus\\Exceptions",
-    "\\Code\\VallisNexusProject\\VallisNexus\\Models"
+    "\\Code\\VallisNexusProject\\VallisNexus\\Models",
+    "\\Code\\VallisNexusProject\\VallisNexus\\Paginas"
   ],
-  "SelectedNode": "\\Code\\VallisNexusProject\\VallisNexus\\Program.cs",
+  "SelectedNode": "\\Code\\VallisNexusProject\\VallisNexus\\Paginas\\HoofdMenu.cs",
   "PreviewInSolutionExplorer": false
 }
