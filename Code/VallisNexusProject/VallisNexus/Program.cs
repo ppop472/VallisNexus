@@ -20,7 +20,7 @@ namespace VallisNexus
 
             DBArtiest_ORG test = new DBArtiest_ORG();
             //test.VoegArtiestToe("MR. Kitty");
-            test.ArtiestVerwijderen("Christian");
+            //test.ArtiestVerwijderen("Christian");
             //test.ArtiestUpdaten("Mr.Kitty", "MR. Kitty");
             //test.GenreAanArtiestToevoegen("Christian", "1 2");          
 

@@ -33,5 +33,10 @@ namespace VallisNexus.Paginas
             }
         }
 
+        public void ToonPersoonlijkProgramma()
+        {
+            Console.WriteLine("Persoonlijk Programma");
+        }
+
     }
 }
