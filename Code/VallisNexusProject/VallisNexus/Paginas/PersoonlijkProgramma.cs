@@ -35,27 +35,8 @@ namespace VallisNexus.Paginas
 
         public void ToonPersoonlijkProgramma()
         {
-            if (PersoonlijkeOptredens.Count == 0)
-            {
-                Console.WriteLine("Er zijn nog geen optredens toegevoegd.");
-            }
-            else
-            {
-                foreach (var optreden in PersoonlijkeOptredens)
-                {
-                    Console.WriteLine($"Artiest: {optreden.artiestNaam}");
-                    Console.WriteLine($"Starttijd: {optreden.starttijd}");
-                    Console.WriteLine($"Eindtijd: {optreden.eindtijd}");
-                    Console.WriteLine("---------------------------");
-                }
-            }
-
-            Console.WriteLine();
-            Console.WriteLine("Druk op een toets om terug te gaan...");
-            Console.ReadKey();
+            Console.WriteLine("Persoonlijk Programma");
         }
-
-
 
     }
 }

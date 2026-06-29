@@ -71,18 +71,14 @@ public class HoofdMenu
                     ProgrammaTonen programmatonen = new ProgrammaTonen();
                     Console.Clear();
                     programmatonen.ToonProgramma();
-            }
-
-
+                }
+            
             if (keuze == "2")
             {
                 PersoonlijkProgramma persoonlijkProgramma = new PersoonlijkProgramma();
                 Console.Clear();
-                persoonlijkProgramma.LadenPersoonlijkProgramma();
                 persoonlijkProgramma.ToonPersoonlijkProgramma();
             }
-
-
 
 
             if (keuze == "3")
