@@ -24,7 +24,8 @@ namespace VallisNexus.Paginas
                 foreach (var podium in podiums)
                 {
                     Console.WriteLine($"Podium: {podium.naam}\n");
-                    if(podium.optreden.Count == 0)
+
+                    foreach (var optreden in podium.Optredens)
                     {
                         Console.WriteLine($"Er zijn geen optredens.\n");
                     }

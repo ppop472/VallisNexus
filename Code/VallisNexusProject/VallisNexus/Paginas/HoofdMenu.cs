@@ -67,13 +67,24 @@ public class HoofdMenu
             }
 
             if (keuze == "1")
-                {
+            {
                     ProgrammaTonen programmatonen = new ProgrammaTonen();
                     Console.Clear();
                     programmatonen.ToonProgramma();
-                }
+            }
 
-                
+
+            if (keuze == "2")
+            {
+                PersoonlijkProgramma persoonlijkProgramma = new PersoonlijkProgramma();
+                Console.Clear();
+                persoonlijkProgramma.LadenPersoonlijkProgramma();
+                persoonlijkProgramma.ToonPersoonlijkProgramma();
+            }
+
+
+
+
             if (keuze == "3")
             {
                 ToonPlattegrond plattegrond = new ToonPlattegrond();
