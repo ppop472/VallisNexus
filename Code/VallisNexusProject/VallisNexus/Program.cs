@@ -20,7 +20,7 @@ namespace VallisNexus
 
             DBArtiest_ORG test = new DBArtiest_ORG();
             //test.VoegArtiestToe("MR. Kitty");
-            test.ArtiestVerwijderen("Christian");
+            //test.ArtiestVerwijderen("Christian");
             //test.ArtiestUpdaten("Mr.Kitty", "MR. Kitty");
             //test.GenreAanArtiestToevoegen("Christian", "1 2");          
 
@@ -46,6 +46,7 @@ namespace VallisNexus
             //var test10 = dbGenre_ORG.VoegGenresToe("Rap");
             //var test11 = dbGenre_ORG.GenresUpdaten("Techno", "Rap");
             //var test12 = dbGenre_ORG.GenresVerwijderen("Techno");
+
             Console.ReadLine();
         }
     }
