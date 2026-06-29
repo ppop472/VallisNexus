@@ -235,9 +235,6 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Images\newplattegrondbitmap.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
     <Content Include="Images\plattegrond.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
