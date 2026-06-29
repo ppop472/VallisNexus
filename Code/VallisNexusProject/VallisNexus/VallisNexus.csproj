@@ -243,5 +243,6 @@
   <ItemGroup>
     <Reference Include="System.Drawing" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

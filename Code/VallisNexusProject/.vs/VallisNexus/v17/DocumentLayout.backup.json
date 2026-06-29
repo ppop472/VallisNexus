@@ -3,20 +3,36 @@
   "WorkspaceRootPath": "C:\\Users\\kakcs\\Documents\\Git\\VallisNexus\\Code\\VallisNexusProject\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{8A31F424-686A-4090-96E2-D1940D9D9B97}|VallisNexus\\VallisNexus.csproj|c:\\users\\kakcs\\documents\\git\\vallisnexus\\code\\vallisnexusproject\\vallisnexus\\dataaccess\\crud_voor_org\\dbartiest_org.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{8A31F424-686A-4090-96E2-D1940D9D9B97}|VallisNexus\\VallisNexus.csproj|C:\\Users\\kakcs\\Documents\\Git\\VallisNexus\\Code\\VallisNexusProject\\vallisnexus\\paginas\\programmatonen.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8A31F424-686A-4090-96E2-D1940D9D9B97}|VallisNexus\\VallisNexus.csproj|solutionrelative:vallisnexus\\paginas\\programmatonen.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8A31F424-686A-4090-96E2-D1940D9D9B97}|VallisNexus\\VallisNexus.csproj|C:\\Users\\kakcs\\Documents\\Git\\VallisNexus\\Code\\VallisNexusProject\\vallisnexus\\paginas\\hoofdmenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8A31F424-686A-4090-96E2-D1940D9D9B97}|VallisNexus\\VallisNexus.csproj|solutionrelative:vallisnexus\\paginas\\hoofdmenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8A31F424-686A-4090-96E2-D1940D9D9B97}|VallisNexus\\VallisNexus.csproj|c:\\users\\kakcs\\documents\\git\\vallisnexus\\code\\vallisnexusproject\\vallisnexus\\paginas\\meerinformatie.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8A31F424-686A-4090-96E2-D1940D9D9B97}|VallisNexus\\VallisNexus.csproj|solutionrelative:vallisnexus\\paginas\\meerinformatie.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8A31F424-686A-4090-96E2-D1940D9D9B97}|VallisNexus\\VallisNexus.csproj|C:\\Users\\kakcs\\Documents\\Git\\VallisNexus\\Code\\VallisNexusProject\\vallisnexus\\dataaccess\\crud_voor_org\\dbartiest_org.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{8A31F424-686A-4090-96E2-D1940D9D9B97}|VallisNexus\\VallisNexus.csproj|solutionrelative:vallisnexus\\dataaccess\\crud_voor_org\\dbartiest_org.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{8A31F424-686A-4090-96E2-D1940D9D9B97}|VallisNexus\\VallisNexus.csproj|c:\\users\\kakcs\\documents\\git\\vallisnexus\\code\\vallisnexusproject\\vallisnexus\\dataaccess\\crud_voor_org\\dboptreden_org.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8A31F424-686A-4090-96E2-D1940D9D9B97}|VallisNexus\\VallisNexus.csproj|solutionrelative:vallisnexus\\dataaccess\\crud_voor_org\\dboptreden_org.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8A31F424-686A-4090-96E2-D1940D9D9B97}|VallisNexus\\VallisNexus.csproj|C:\\Users\\kakcs\\Documents\\Git\\VallisNexus\\Code\\VallisNexusProject\\vallisnexus\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{8A31F424-686A-4090-96E2-D1940D9D9B97}|VallisNexus\\VallisNexus.csproj|c:\\users\\kakcs\\documents\\git\\vallisnexus\\code\\vallisnexusproject\\vallisnexus\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{8A31F424-686A-4090-96E2-D1940D9D9B97}|VallisNexus\\VallisNexus.csproj|solutionrelative:vallisnexus\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{8A31F424-686A-4090-96E2-D1940D9D9B97}|VallisNexus\\VallisNexus.csproj|c:\\users\\kakcs\\documents\\git\\vallisnexus\\code\\vallisnexusproject\\vallisnexus\\dataaccess\\dbartiest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{8A31F424-686A-4090-96E2-D1940D9D9B97}|VallisNexus\\VallisNexus.csproj|C:\\Users\\kakcs\\Documents\\Git\\VallisNexus\\Code\\VallisNexusProject\\vallisnexus\\dataaccess\\crud_voor_org\\dboptreden_org.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8A31F424-686A-4090-96E2-D1940D9D9B97}|VallisNexus\\VallisNexus.csproj|solutionrelative:vallisnexus\\dataaccess\\crud_voor_org\\dboptreden_org.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8A31F424-686A-4090-96E2-D1940D9D9B97}|VallisNexus\\VallisNexus.csproj|C:\\Users\\kakcs\\Documents\\Git\\VallisNexus\\Code\\VallisNexusProject\\vallisnexus\\dataaccess\\dbartiest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{8A31F424-686A-4090-96E2-D1940D9D9B97}|VallisNexus\\VallisNexus.csproj|solutionrelative:vallisnexus\\dataaccess\\dbartiest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8A31F424-686A-4090-96E2-D1940D9D9B97}|VallisNexus\\VallisNexus.csproj|C:\\Users\\kakcs\\Documents\\Git\\VallisNexus\\Code\\VallisNexusProject\\vallisnexus\\models\\podium.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8A31F424-686A-4090-96E2-D1940D9D9B97}|VallisNexus\\VallisNexus.csproj|solutionrelative:vallisnexus\\models\\podium.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{8A31F424-686A-4090-96E2-D1940D9D9B97}|VallisNexus\\VallisNexus.csproj|c:\\users\\kakcs\\documents\\git\\vallisnexus\\code\\vallisnexusproject\\vallisnexus\\dataaccess\\dboptreden.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -25,18 +41,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{8A31F424-686A-4090-96E2-D1940D9D9B97}|VallisNexus\\VallisNexus.csproj|C:\\Users\\kakcs\\Documents\\Git\\VallisNexus\\Code\\VallisNexusProject\\vallisnexus\\models\\optredendto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{8A31F424-686A-4090-96E2-D1940D9D9B97}|VallisNexus\\VallisNexus.csproj|solutionrelative:vallisnexus\\models\\optredendto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8A31F424-686A-4090-96E2-D1940D9D9B97}|VallisNexus\\VallisNexus.csproj|C:\\Users\\kakcs\\Documents\\Git\\VallisNexus\\Code\\VallisNexusProject\\vallisnexus\\paginas\\hoofdmenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8A31F424-686A-4090-96E2-D1940D9D9B97}|VallisNexus\\VallisNexus.csproj|solutionrelative:vallisnexus\\paginas\\hoofdmenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8A31F424-686A-4090-96E2-D1940D9D9B97}|VallisNexus\\VallisNexus.csproj|c:\\users\\kakcs\\documents\\git\\vallisnexus\\code\\vallisnexusproject\\vallisnexus\\paginas\\programmatonen.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8A31F424-686A-4090-96E2-D1940D9D9B97}|VallisNexus\\VallisNexus.csproj|solutionrelative:vallisnexus\\paginas\\programmatonen.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8A31F424-686A-4090-96E2-D1940D9D9B97}|VallisNexus\\VallisNexus.csproj|C:\\Users\\kakcs\\Documents\\Git\\VallisNexus\\Code\\VallisNexusProject\\vallisnexus\\models\\podium.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8A31F424-686A-4090-96E2-D1940D9D9B97}|VallisNexus\\VallisNexus.csproj|solutionrelative:vallisnexus\\models\\podium.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{8A31F424-686A-4090-96E2-D1940D9D9B97}|VallisNexus\\VallisNexus.csproj|C:\\Users\\kakcs\\Documents\\Git\\VallisNexus\\Code\\VallisNexusProject\\vallisnexus\\models\\optreden.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -57,38 +61,51 @@
       "VerticalTabListWidth": 256,
       "DocumentGroups": [
         {
-          "DockedWidth": 175,
-          "SelectedChildIndex": 7,
+          "DockedWidth": 237,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 2,
+              "Title": "MeerInformatie.cs",
+              "DocumentMoniker": "C:\\Users\\kakcs\\Documents\\Git\\VallisNexus\\Code\\VallisNexusProject\\VallisNexus\\Paginas\\MeerInformatie.cs",
+              "RelativeDocumentMoniker": "VallisNexus\\Paginas\\MeerInformatie.cs",
+              "ToolTip": "C:\\Users\\kakcs\\Documents\\Git\\VallisNexus\\Code\\VallisNexusProject\\VallisNexus\\Paginas\\MeerInformatie.cs",
+              "RelativeToolTip": "VallisNexus\\Paginas\\MeerInformatie.cs",
+              "ViewState": "AgIAADYAAAAAAAAAAAAIwEgAAAA0AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-29T11:46:51.659Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
               "Title": "ProgrammaTonen.cs",
               "DocumentMoniker": "C:\\Users\\kakcs\\Documents\\Git\\VallisNexus\\Code\\VallisNexusProject\\VallisNexus\\Paginas\\ProgrammaTonen.cs",
               "RelativeDocumentMoniker": "VallisNexus\\Paginas\\ProgrammaTonen.cs",
               "ToolTip": "C:\\Users\\kakcs\\Documents\\Git\\VallisNexus\\Code\\VallisNexusProject\\VallisNexus\\Paginas\\ProgrammaTonen.cs",
               "RelativeToolTip": "VallisNexus\\Paginas\\ProgrammaTonen.cs",
-              "ViewState": "AgIAABMAAAAAAAAAAAAgwB0AAABPAAAAAAAAAA==",
+              "ViewState": "AgIAAAoAAAAAAAAAAAAgwBwAAABFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-06-25T12:11:31.17Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 1,
               "Title": "HoofdMenu.cs",
               "DocumentMoniker": "C:\\Users\\kakcs\\Documents\\Git\\VallisNexus\\Code\\VallisNexusProject\\VallisNexus\\Paginas\\HoofdMenu.cs",
               "RelativeDocumentMoniker": "VallisNexus\\Paginas\\HoofdMenu.cs",
               "ToolTip": "C:\\Users\\kakcs\\Documents\\Git\\VallisNexus\\Code\\VallisNexusProject\\VallisNexus\\Paginas\\HoofdMenu.cs",
               "RelativeToolTip": "VallisNexus\\Paginas\\HoofdMenu.cs",
-              "ViewState": "AgIAAAoAAAAAAAAAAAAgwBwAAAA9AAAAAAAAAA==",
+              "ViewState": "AgIAACIAAAAAAAAAAAAgwBwAAAA9AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-06-24T16:09:19.852Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 9,
               "Title": "OptredenDTO.cs",
               "DocumentMoniker": "C:\\Users\\kakcs\\Documents\\Git\\VallisNexus\\Code\\VallisNexusProject\\VallisNexus\\Models\\OptredenDTO.cs",
               "RelativeDocumentMoniker": "VallisNexus\\Models\\OptredenDTO.cs",
@@ -96,12 +113,11 @@
               "RelativeToolTip": "VallisNexus\\Models\\OptredenDTO.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-24T15:42:43.155Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-06-24T15:42:43.155Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 10,
               "Title": "Optreden.cs",
               "DocumentMoniker": "C:\\Users\\kakcs\\Documents\\Git\\VallisNexus\\Code\\VallisNexusProject\\VallisNexus\\Models\\Optreden.cs",
               "RelativeDocumentMoniker": "VallisNexus\\Models\\Optreden.cs",
@@ -113,7 +129,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 7,
               "Title": "Podium.cs",
               "DocumentMoniker": "C:\\Users\\kakcs\\Documents\\Git\\VallisNexus\\Code\\VallisNexusProject\\VallisNexus\\Models\\Podium.cs",
               "RelativeDocumentMoniker": "VallisNexus\\Models\\Podium.cs",
@@ -121,11 +137,12 @@
               "RelativeToolTip": "VallisNexus\\Models\\Podium.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-24T15:35:32.919Z"
+              "WhenOpened": "2026-06-24T15:35:32.919Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 12,
               "Title": "Artiest.cs",
               "DocumentMoniker": "C:\\Users\\kakcs\\Documents\\Git\\VallisNexus\\Code\\VallisNexusProject\\VallisNexus\\Models\\Artiest.cs",
               "RelativeDocumentMoniker": "VallisNexus\\Models\\Artiest.cs",
@@ -137,7 +154,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 11,
               "Title": "App.config",
               "DocumentMoniker": "C:\\Users\\kakcs\\Documents\\Git\\VallisNexus\\Code\\VallisNexusProject\\VallisNexus\\App.config",
               "RelativeDocumentMoniker": "VallisNexus\\App.config",
@@ -149,13 +166,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 4,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\kakcs\\Documents\\Git\\VallisNexus\\Code\\VallisNexusProject\\VallisNexus\\Program.cs",
               "RelativeDocumentMoniker": "VallisNexus\\Program.cs",
               "ToolTip": "C:\\Users\\kakcs\\Documents\\Git\\VallisNexus\\Code\\VallisNexusProject\\VallisNexus\\Program.cs",
               "RelativeToolTip": "VallisNexus\\Program.cs",
-              "ViewState": "AgIAAAwAAAAAAAAAAAAtwCEAAAAMAAAAAAAAAA==",
+              "ViewState": "AgIAAA4AAAAAAAAAAAAqwCgAAABMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-06-19T18:39:24.99Z",
               "EditorCaption": ""
@@ -163,57 +180,57 @@
           ]
         },
         {
-          "DockedWidth": 225,
+          "DockedWidth": 163,
           "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 5,
               "Title": "DBOptreden_ORG.cs",
               "DocumentMoniker": "C:\\Users\\kakcs\\Documents\\Git\\VallisNexus\\Code\\VallisNexusProject\\VallisNexus\\DataAccess\\CRUD_VOOR_ORG\\DBOptreden_ORG.cs",
               "RelativeDocumentMoniker": "VallisNexus\\DataAccess\\CRUD_VOOR_ORG\\DBOptreden_ORG.cs",
               "ToolTip": "C:\\Users\\kakcs\\Documents\\Git\\VallisNexus\\Code\\VallisNexusProject\\VallisNexus\\DataAccess\\CRUD_VOOR_ORG\\DBOptreden_ORG.cs",
               "RelativeToolTip": "VallisNexus\\DataAccess\\CRUD_VOOR_ORG\\DBOptreden_ORG.cs",
-              "ViewState": "AgIAABAAAAAAAAAAAAAQwC8AAAAtAAAAAAAAAA==",
+              "ViewState": "AgIAAA4AAAAAAAAAAAAAAC8AAAAtAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-06-26T13:37:23.609Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 6,
               "Title": "DBArtiest.cs",
               "DocumentMoniker": "C:\\Users\\kakcs\\Documents\\Git\\VallisNexus\\Code\\VallisNexusProject\\VallisNexus\\DataAccess\\DBArtiest.cs",
               "RelativeDocumentMoniker": "VallisNexus\\DataAccess\\DBArtiest.cs",
               "ToolTip": "C:\\Users\\kakcs\\Documents\\Git\\VallisNexus\\Code\\VallisNexusProject\\VallisNexus\\DataAccess\\DBArtiest.cs",
               "RelativeToolTip": "VallisNexus\\DataAccess\\DBArtiest.cs",
-              "ViewState": "AgIAAD0AAAAAAAAAAAAWwFEAAABGAAAAAAAAAA==",
+              "ViewState": "AgIAADsAAAAAAAAAAAAkwE8AAAAgAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-06-26T12:50:35.105Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 8,
               "Title": "DBOptreden.cs",
               "DocumentMoniker": "C:\\Users\\kakcs\\Documents\\Git\\VallisNexus\\Code\\VallisNexusProject\\VallisNexus\\DataAccess\\DBOptreden.cs",
               "RelativeDocumentMoniker": "VallisNexus\\DataAccess\\DBOptreden.cs",
               "ToolTip": "C:\\Users\\kakcs\\Documents\\Git\\VallisNexus\\Code\\VallisNexusProject\\VallisNexus\\DataAccess\\DBOptreden.cs",
               "RelativeToolTip": "VallisNexus\\DataAccess\\DBOptreden.cs",
-              "ViewState": "AgIAAAwAAAAAAAAAAAAAACIAAAAhAAAAAAAAAA==",
+              "ViewState": "AgIAAA4AAAAAAAAAAAAQwCAAAAAxAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-06-26T12:49:40.396Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 3,
               "Title": "DBArtiest_ORG.cs",
               "DocumentMoniker": "C:\\Users\\kakcs\\Documents\\Git\\VallisNexus\\Code\\VallisNexusProject\\VallisNexus\\DataAccess\\CRUD_VOOR_ORG\\DBArtiest_ORG.cs",
               "RelativeDocumentMoniker": "VallisNexus\\DataAccess\\CRUD_VOOR_ORG\\DBArtiest_ORG.cs",
               "ToolTip": "C:\\Users\\kakcs\\Documents\\Git\\VallisNexus\\Code\\VallisNexusProject\\VallisNexus\\DataAccess\\CRUD_VOOR_ORG\\DBArtiest_ORG.cs",
               "RelativeToolTip": "VallisNexus\\DataAccess\\CRUD_VOOR_ORG\\DBArtiest_ORG.cs",
-              "ViewState": "AgIAAIMAAAAAAAAAAAApwKcAAAAJAAAAAAAAAA==",
+              "ViewState": "AgIAAIIAAAAAAAAAAADgv4sAAAAdAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-06-26T12:29:15.709Z",
               "EditorCaption": ""
