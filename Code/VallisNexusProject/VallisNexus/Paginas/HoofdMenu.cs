@@ -48,12 +48,13 @@ public class HoofdMenu
                 Console.WriteLine("==================");
                 Console.ForegroundColor = ConsoleColor.Green;
                 Console.Write("Maak uw keuze: ");
-                string keuze = Console.ReadLine();
 
-                Console.ForegroundColor = ConsoleColor.White;
-                Console.WriteLine("==================");
+                string keuze = Console.ReadLine();
+                
+                //Deze writeline werkt niet omdat de code stopt totdat de readline input heef.
+                //Console.ForegroundColor = ConsoleColor.White;
+                //Console.WriteLine("==================");
                 Console.ResetColor();
-                //string keuze = Console.ReadLine();
 
 
             if (keuze != "1" &&
