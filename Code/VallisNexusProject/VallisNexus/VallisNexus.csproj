@@ -212,6 +212,7 @@
     <Compile Include="DataAccess\CRUD_VOOR_ORG\DBGenre_ORG.cs" />
     <Compile Include="DataAccess\DBOptreden.cs" />
     <Compile Include="DataAccess\DBPodium.cs" />
+    <Compile Include="DataAccess\DBTicket.cs" />
     <Compile Include="Exceptions\Exception.cs" />
     <Compile Include="Models\Artiest.cs" />
     <Compile Include="Models\ArtiestGenre.cs" />

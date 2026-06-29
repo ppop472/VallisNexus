@@ -18,15 +18,20 @@ namespace VallisNexus.DataAccess
             Env.Load("../../.env");
             dbstring = Env.GetString("DBSTRING");
         }
-        public IEnumerable<Ticket> GetTicket()
+        public List<Ticket> GetTicket()
         {
+            List<Ticket> tickets = new List<Ticket>();
             try
             {
                 string sql = "SELECT * FROM Ticket WHERE DeletedAt IS NULL";
                 using (var connection = new SqlConnection(dbstring))
                 {
                     IEnumerable<Ticket> query = connection.Query<Ticket>(sql);
-                    return query;
+                    foreach (Ticket ticket in query)
+                    {
+                        tickets.Add(ticket);
+                    }
+                    return tickets;
                 }
             }
             catch (Exception ex)
