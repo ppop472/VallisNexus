@@ -25,13 +25,13 @@ namespace VallisNexus.Paginas
                 {
                     Console.WriteLine($"Podium: {podium.naam}\n");
 
-                    foreach (var optreden in podium.Optredens)
+                    if(podium.optredens.Count == 0)
                     {
                         Console.WriteLine($"Er zijn geen optredens.\n");
                     }
                     else
                     {
-                        foreach (var optreden in podium.optreden)
+                        foreach (OptredenDTO optreden in podium.optredens)
                         {
                             Console.WriteLine($"    {teller}. {optreden.artiestNaam}");
                             Console.WriteLine($"   Starttijd: {optreden.starttijd}");
