@@ -57,6 +57,7 @@ namespace VallisNexus.Paginas
 
             while (informatieTonen)
             {
+                
                 string keuzeInvoer = Console.ReadLine();
                 MeerInformatie meerInformatie = new MeerInformatie();
                 if (keuzeInvoer == "1")
@@ -102,9 +103,7 @@ namespace VallisNexus.Paginas
                 if (keuzeInvoer == "4")
                 {
                     Console.Clear();
-                    Console.WriteLine("Huisregels");
                     Console.Clear();
-
                     Console.WriteLine(@"
 +------------------------------------------------------------------+
 |                           HUISREGELS                             |
