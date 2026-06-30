@@ -46,5 +46,29 @@ namespace VallisNexus.DataAccess
             }
             return podiumLijst;
         }
+        public OptredenDTO GetOptredenVoorFavoriete(int id)
+        {
+            DBPodium dbPodium = new DBPodium();
+            List<Podium> podiumLijst = dbPodium.GetPodium();
+            using (var connection = new SqlConnection(dbstring))
+            {
+                string sql = "  SELECT * FROM Optreden WHERE Id = @id AND DeletedAt IS NULL ORDER BY StartTijd";
+                object parameters = new { id = id };
+                OptredenDTO query = connection.QueryFirstOrDefault<OptredenDTO>(sql, parameters);
+
+                DBArtiest dbArtiest = new DBArtiest();
+                Artiest artiest = dbArtiest.GetArtiestMetId(query.artiestId);
+                if (artiest != null)
+                {
+                    query.artiestNaam = artiest.naam;
+                }
+                Podium podium = podiumLijst.FirstOrDefault(p => p.id == query.podiumId);
+                if (podium != null)
+                {
+                    query.podiumNaam = podium.naam;
+                }
+                return query;
+            }           
+        }
     }
 }

@@ -26,9 +26,9 @@ namespace VallisNexus.DataAccess.CRUD_VOOR_ORG
             using (var connection = new SqlConnection(dbstring))
             {
                 IEnumerable<Genre> query = connection.Query<Genre>(sql);
-                foreach (var podium in query)
+                foreach (var genre in query)
                 {
-                    genreLijst.Add(podium);
+                    genreLijst.Add(genre);
                 }
             }
             return genreLijst;

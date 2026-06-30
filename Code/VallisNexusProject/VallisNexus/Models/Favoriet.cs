@@ -6,11 +6,10 @@ using System.Threading.Tasks;
 
 namespace VallisNexus.Models
 {
-    public class OptredenDTO : Optreden
+    internal class Favoriet
     {
-        public string artiestNaam { get;  set; }
-
-        public int teller;
-        public string podiumNaam { get; set; }
+        public int id{ get; set; }
+        public int gebruikerId { get; set; }
+        public int optredenId { get; set; }
     }
 }
