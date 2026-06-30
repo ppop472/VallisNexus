@@ -44,12 +44,12 @@ namespace VallisNexus.Paginas
 
             //BITMAP IMAGES, werkt niet fatsoenlijk
 
-            int newWidth = 100;
+            int newWidth = 120;
 
             string path = Path.Combine(
                 AppDomain.CurrentDomain.BaseDirectory,
                 "Images",
-                "plattegrond80-30.png"
+                "plattegrond80-30(2.0).png"
             );
 
             if (!File.Exists(path))
@@ -76,7 +76,8 @@ namespace VallisNexus.Paginas
 
                     int brightness = (pixel.R + pixel.G + pixel.B) / 3;
 
-                    Console.Write(brightness > 128 ? " " : "#");
+                    Console.Write(brightness > 128 ? " " : "|");
+
                 }
 
                 Console.WriteLine();
