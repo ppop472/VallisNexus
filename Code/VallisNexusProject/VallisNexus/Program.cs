@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Runtime.InteropServices.ComTypes;
 using System.Text;
@@ -7,7 +8,7 @@ using System.Threading.Tasks;
 using VallisNexus.DataAccess;
 using VallisNexus.DataAccess.CRUD_VOOR_ORG;
 using VallisNexus.Models;
-using System.Drawing;
+using VallisNexus.Paginas;
 
 namespace VallisNexus
 {
@@ -34,7 +35,7 @@ namespace VallisNexus
 
             DBOptreden_ORG dBOptreden = new DBOptreden_ORG();
 
-            //var test5 = dBOptreden.VoegOptredenToeg(1, 1, new DateTime(2026,7,30,03,30,0,0), new DateTime(2026, 07, 30, 04, 30, 0, 0));
+            //var test5 = dBOptreden.VoegOptredenToeg(5, 2, new DateTime(2026,7,3,03,30,0,0), new DateTime(2026, 07, 3, 04, 30, 0, 0));
 
             DBTickets_ORG dBTickets = new DBTickets_ORG();
             //var test6 = dBTickets.TicketAanmaken("VIP Ticket", 129.50);
@@ -46,6 +47,9 @@ namespace VallisNexus
             //var test10 = dbGenre_ORG.VoegGenresToe("Rap");
             //var test11 = dbGenre_ORG.GenresUpdaten("Techno", "Rap");
             //var test12 = dbGenre_ORG.GenresVerwijderen("Techno");
+
+            var test13 = new PersoonlijkProgramma();
+            //test13.OpslaanPersoonlijkProgramma();
 
             Console.ReadLine();
         }

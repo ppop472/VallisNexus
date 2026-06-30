@@ -44,8 +44,10 @@ namespace VallisNexus.Paginas
                             Console.WriteLine($"   Starttijd: {optreden.starttijd}");
                             Console.WriteLine($"   Eindtijd: {optreden.eindtijd}\n");
 
-                            alleOptredens.Add(optreden);
                             teller++;
+                            optreden.teller = teller;
+                            alleOptredens.Add(optreden);
+                            
                         }
                     }
                     Console.WriteLine("---------------------------");
@@ -78,14 +80,18 @@ namespace VallisNexus.Paginas
 
                     if (nummer >= 1 && nummer <= alleOptredens.Count)
                     {
-                        PersoonlijkProgramma programma = new PersoonlijkProgramma();
-                        programma.LadenPersoonlijkProgramma();
-
-                        programma.PersoonlijkeOptredens.Add(alleOptredens[nummer - 1]);
-
-                        programma.OpslaanPersoonlijkProgramma();
-
-                        Console.WriteLine("Het optreden is toegevoegd aan je persoonlijke programma.");
+                        foreach (var podium in podiums)
+                        {
+                            foreach (OptredenDTO optreden in podium.optredens)
+                            {
+                                if(optreden.teller == nummer)
+                                {
+                                    DBFavoriet dbFavoriet = new DBFavoriet();
+                                    dbFavoriet.VoegFavorietToe(optreden);
+                                    Console.WriteLine("Het optreden is toegevoegd aan je persoonlijke programma.");
+                                }
+                            }
+                        }                        
                     }
                     else
                     {
@@ -97,30 +103,8 @@ namespace VallisNexus.Paginas
                 }
                 else if (keuze == "2")
                 {
-                    Console.Clear();
-
-                    PersoonlijkProgramma programma = new PersoonlijkProgramma();
-                    programma.LadenPersoonlijkProgramma();
-
-                    Console.WriteLine("Persoonlijk programma:\n");
-
-                    if (programma.PersoonlijkeOptredens.Count == 0)
-                    {
-                        Console.WriteLine("Er zijn nog geen optredens toegevoegd.");
-                    }
-                    else
-                    {
-                        foreach (var optreden in programma.PersoonlijkeOptredens)
-                        {
-                            Console.WriteLine($"Artiest: {optreden.artiestNaam}");
-                            Console.WriteLine($"Starttijd: {optreden.starttijd}");
-                            Console.WriteLine($"Eindtijd: {optreden.eindtijd}");
-                            Console.WriteLine("---------------------------");
-                        }
-                    }
-
-                    Console.WriteLine("Druk op een toets om terug te gaan...");
-                    Console.ReadKey();
+                    PersoonlijkProgramma persoonlijkProgramama = new PersoonlijkProgramma();
+                    persoonlijkProgramama.ToonPersoonlijkProgramma();
                 }
                 else if (keuze == "3")
                 {

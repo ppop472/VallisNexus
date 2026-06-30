@@ -42,12 +42,7 @@ namespace VallisNexus.DataAccess
                         "SELECT * FROM ArtiestGenre WHERE ArtiestId = @artiestId WHERE DeletedAt IS NULL",
                         new { artiestId = artiest.id }
                     );
-
-                    //artiest.genres = genres
-                    //    .Where(g => artiestGenreLijst.Any(ag => ag.GenreId == g.id))
-                    //    .ToList();
-
-                    //artiestenLijst.Add(artiest);
+           
                     foreach (var genre in genres)
                     {
                         foreach (var artiestGenre in artiestGenreLijst)
