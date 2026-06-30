@@ -242,6 +242,9 @@
     <Content Include="Images\plattegrond3.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Images\plattegrond80-30%282.0%29.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Images\plattegrond80-30.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
