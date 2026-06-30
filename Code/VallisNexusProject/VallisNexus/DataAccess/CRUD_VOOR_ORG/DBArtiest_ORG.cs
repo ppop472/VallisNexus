@@ -156,7 +156,6 @@ namespace VallisNexus.DataAccess.CRUD_VOOR_ORG
                 }
                 DBOptreden_ORG dbGenre_ORG = new DBOptreden_ORG();
                 dbGenre_ORG.OptredenVerwijderenBijArtiestVerwijdering(artiest.id);
-                Console.WriteLine("gelukt");
                 return true;
             }
             catch (Exception ex)

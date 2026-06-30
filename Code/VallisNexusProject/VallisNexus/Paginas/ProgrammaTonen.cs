@@ -41,8 +41,8 @@ namespace VallisNexus.Paginas
                         foreach (OptredenDTO optreden in podium.optredens)
                         {
                             Console.WriteLine($"    {teller}. {optreden.artiestNaam}");
-                            Console.WriteLine($"   Starttijd: {optreden.starttijd}");
-                            Console.WriteLine($"   Eindtijd: {optreden.eindtijd}\n");
+                            Console.WriteLine($"       Starttijd: {optreden.starttijd}");
+                            Console.WriteLine($"       Eindtijd: {optreden.eindtijd}\n");
 
                             teller++;
                             optreden.teller = teller;
@@ -84,7 +84,7 @@ namespace VallisNexus.Paginas
                         {
                             foreach (OptredenDTO optreden in podium.optredens)
                             {
-                                if(optreden.teller == nummer)
+                                if(optreden.teller-1 == nummer)
                                 {
                                     DBFavoriet dbFavoriet = new DBFavoriet();
                                     dbFavoriet.VoegFavorietToe(optreden);

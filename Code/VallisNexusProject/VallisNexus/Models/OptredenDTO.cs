@@ -11,6 +11,6 @@ namespace VallisNexus.Models
         public string artiestNaam { get;  set; }
 
         public int teller;
-
+        public string podiumNaam { get; set; }
     }
 }

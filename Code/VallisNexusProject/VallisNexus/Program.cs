@@ -35,7 +35,7 @@ namespace VallisNexus
 
             DBOptreden_ORG dBOptreden = new DBOptreden_ORG();
 
-            //var test5 = dBOptreden.VoegOptredenToeg(5, 2, new DateTime(2026,7,3,03,30,0,0), new DateTime(2026, 07, 3, 04, 30, 0, 0));
+            //var test5 = dBOptreden.VoegOptredenToeg(5, 1, new DateTime(2026,2,2,05,30,0,0), new DateTime(2026, 2, 2, 06, 30, 0, 0));
 
             DBTickets_ORG dBTickets = new DBTickets_ORG();
             //var test6 = dBTickets.TicketAanmaken("VIP Ticket", 129.50);
