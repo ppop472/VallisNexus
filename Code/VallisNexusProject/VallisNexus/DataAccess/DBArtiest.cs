@@ -32,20 +32,20 @@ namespace VallisNexus.DataAccess
             string sql = "SELECT * FROM Artiest WHERE DeletedAt IS NULL";
             List<Artiest> artiestenLijst = new List<Artiest>();
 
-            using (var connection = new SqlConnection(dbstring))
+            using (SqlConnection connection = new SqlConnection(dbstring))
             {
                 IEnumerable<Artiest> query = connection.Query<Artiest>(sql);
 
-                foreach (var artiest in query)
+                foreach (Artiest artiest in query)
                 {
                     IEnumerable<ArtiestGenre> artiestGenreLijst = connection.Query<ArtiestGenre>(
                         "SELECT * FROM ArtiestGenre WHERE ArtiestId = @artiestId WHERE DeletedAt IS NULL",
                         new { artiestId = artiest.id }
                     );
            
-                    foreach (var genre in genres)
+                    foreach (Genre genre in genres)
                     {
-                        foreach (var artiestGenre in artiestGenreLijst)
+                        foreach (ArtiestGenre artiestGenre in artiestGenreLijst)
                         {
                             if (artiestGenre.GenreId == genre.id)
                             {
@@ -65,7 +65,7 @@ namespace VallisNexus.DataAccess
         {
             string sql = "SELECT * FROM Artiest WHERE id = @id AND DeletedAt IS NULL";
             object parameters = new {id = id };           
-            using (var connection = new SqlConnection(dbstring))
+            using (SqlConnection connection = new SqlConnection(dbstring))
             {
                 Artiest query = connection.QueryFirstOrDefault<Artiest>(sql, parameters);
                 return query;
@@ -76,7 +76,7 @@ namespace VallisNexus.DataAccess
         {
             string sql = "SELECT * FROM Artiest WHERE Naam = @naam AND DeletedAt IS NULL";
             object parameters = new { naam = artiestNaam };
-            using (var connection = new SqlConnection(dbstring))
+            using (SqlConnection connection = new SqlConnection(dbstring))
             {
                 Artiest query = connection.QueryFirstOrDefault<Artiest>(sql, parameters);
                 return query;

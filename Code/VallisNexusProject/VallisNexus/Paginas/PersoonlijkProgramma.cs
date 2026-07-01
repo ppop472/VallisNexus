@@ -19,13 +19,14 @@ namespace VallisNexus.Paginas
 
             List<OptredenDTO> optredenDTOLijst = new List<OptredenDTO>();
 
-            DBOptreden optreden = new DBOptreden();
+            Optreden optreden = new Optreden();
 
-            DBFavoriet dBFavoriet = new DBFavoriet();
-            List<Favoriet> favorietLijst = dBFavoriet.GetAlleFavoriet();
-            foreach (var favoriet in favorietLijst)
+            Favoriet favoriet = new Favoriet();
+            List<Favoriet> favorietLijst = favoriet.GetAlleFavoriet();
+
+            foreach (Favoriet fav in favorietLijst)
             {
-                optredenDTOLijst.Add(optreden.GetOptredenVoorFavoriete(favoriet.optredenId));
+                optredenDTOLijst.Add(optreden.GetOptredenVoorFavoriete(fav.optredenId));
             }
             Console.ForegroundColor = ConsoleColor.White;
 
@@ -40,7 +41,7 @@ namespace VallisNexus.Paginas
 |                      Persoonlijke Schema                         |
 +------------------------------------------------------------------+" + "\n");
 
-                foreach (var optredenDTO in optredenDTOLijst)
+                foreach (OptredenDTO optredenDTO in optredenDTOLijst)
                 {
 
                     Console.WriteLine($"{optredenDTO.teller = teller}. {optredenDTO.artiestNaam}: Van |{optredenDTO.starttijd}|  Tot |{optredenDTO.eindtijd}| Locatie: {optredenDTO.podiumNaam}\n");
@@ -65,12 +66,11 @@ namespace VallisNexus.Paginas
 
                     if (nummer >= 1 && nummer <= optredenDTOLijst.Count)
                     {
-                        DBFavoriet dbFavoriet = new DBFavoriet();
                         foreach (OptredenDTO optredenDto in optredenDTOLijst)
                         {
                             if (optredenDto.teller == nummer)
                             {
-                                dbFavoriet.FavorietVerwijderen(optredenDto.id);
+                                favoriet.FavorietVerwijderen(optredenDto.id);
                                 Console.Clear();
                                 plattegrondTonen = false;
                                 Console.WriteLine("Je hebt een favoriete verwijderd.");

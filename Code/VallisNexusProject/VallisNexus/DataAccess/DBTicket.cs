@@ -24,7 +24,7 @@ namespace VallisNexus.DataAccess
             try
             {
                 string sql = "SELECT * FROM Ticket WHERE DeletedAt IS NULL";
-                using (var connection = new SqlConnection(dbstring))
+                using (SqlConnection connection = new SqlConnection(dbstring))
                 {
                     IEnumerable<Ticket> query = connection.Query<Ticket>(sql);
                     foreach (Ticket ticket in query)

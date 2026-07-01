@@ -23,10 +23,10 @@ namespace VallisNexus.DataAccess.CRUD_VOOR_ORG
         {
             string sql = "SELECT * FROM Genre WHERE DeletedAt IS NULL";
             List<Genre> genreLijst = new List<Genre>();
-            using (var connection = new SqlConnection(dbstring))
+            using (SqlConnection connection = new SqlConnection(dbstring))
             {
                 IEnumerable<Genre> query = connection.Query<Genre>(sql);
-                foreach (var genre in query)
+                foreach (Genre genre in query)
                 {
                     genreLijst.Add(genre);
                 }
