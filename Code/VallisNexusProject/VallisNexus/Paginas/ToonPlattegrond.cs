@@ -94,18 +94,50 @@ namespace VallisNexus.Paginas
                 Console.ForegroundColor = ConsoleColor.Green;
                 Console.Write("1. ");
                 Console.ForegroundColor = ConsoleColor.White;
+                Console.WriteLine("Interactieve plattegrond");
+                Console.ForegroundColor = ConsoleColor.Green;
+                Console.Write("2. ");
+                Console.ForegroundColor = ConsoleColor.White;
                 Console.WriteLine("Terug naar hoofdmenu");
                 Console.WriteLine("Maak keuze: ");
 
                 string keuze = Console.ReadLine();
-
                 if (keuze == "1")
+                {
+                    ToonPlattegrond plattegrondviewer = new ToonPlattegrond();
+                    Console.Clear();
+                    plattegrondviewer.PlattegrondViewer();
+                }
+
+                if (keuze == "2")
                 {
                     Console.WriteLine("Je gaat nu terug naar het hoofdmenu");
                     Console.Clear();
                     plattegrondTonen = false;
                 }
+
             }
+        }
+
+        public void PlattegrondViewer()
+        {
+            //Dit toont voorlopig de plattegrond in image viewer totdat we de ascii art opgelost hebben.
+            string path = Path.Combine(
+              AppDomain.CurrentDomain.BaseDirectory, "Images", "plattegrond80-30.png");
+
+            if (File.Exists(path))
+            {
+                Process.Start(new ProcessStartInfo
+                {
+                    FileName = path,
+                    UseShellExecute = true
+                });
+            }
+            else
+            {
+                Console.WriteLine("Image niet gevonden: " + path);
+            }
+
         }
     }
 }
