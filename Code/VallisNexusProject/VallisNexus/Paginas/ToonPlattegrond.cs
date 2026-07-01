@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Drawing;
+using VallisNexus.Models;
 
 namespace VallisNexus.Paginas
 {
@@ -90,6 +91,55 @@ namespace VallisNexus.Paginas
             while (plattegrondTonen)
             {
 
+                Console.Write("----------------------------------------------------------\n");
+                Console.Write("|             FESTIVAL - DRUKTE OP HET TERREIN           |\n");
+                Console.Write("----------------------------------------------------------\n");
+
+                // Het is hardcoded omdat we geen data hebben / krijgen van camerabeelden
+                // Voor podium is die van het aantal optredens
+
+                Optreden alleOptreden = new Optreden();
+                List<Podium> podiums = alleOptreden.GetAlleOptreden();
+
+                int teller = 1;
+
+                foreach (Podium podium in podiums)
+                {
+                    Console.WriteLine($"Podium: {podium.naam}\n");
+
+                    if (podium.optredens.Count == 0)
+                    {
+                        Console.WriteLine($"Er zijn geen optredens.\n");
+                    }
+                    else
+                    {
+                        if(podium.optredens.Count >= 10)
+                        {
+                            Console.WriteLine("Status: Druk\n");
+                        }
+                        else if (podium.optredens.Count < 10 && podium.optredens.Count >= 5)
+                        {
+                            Console.WriteLine("Status: Gemiddeld\n");
+                        }
+                        else if (podium.optredens.Count < 5 && podium.optredens.Count > 0)
+                        {
+                            Console.WriteLine("Status: Rustig\n");
+                        }
+                        else
+                        {
+                            Console.WriteLine("Geen data gevonden\n");
+                        }
+                    }
+                    Console.Write("----------------------------------------------------------\n");
+                }
+
+                // Geen data voor wc en foodtrucks
+                Console.WriteLine("WC\n");
+                Console.WriteLine("Status: Rustig\n");
+                Console.Write("----------------------------------------------------------\n");
+                Console.WriteLine("Foodtrucks\n");
+                Console.WriteLine("Status: Gemiddeld\n");
+                Console.Write("----------------------------------------------------------\n");
 
                 Console.ForegroundColor = ConsoleColor.Green;
                 Console.Write("1. ");
