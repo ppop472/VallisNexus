@@ -35,6 +35,7 @@ namespace VallisNexus.Paginas
             while (plattegrondTonen)
             {
                 int teller = 1;
+
                 Console.Clear();
                 Console.WriteLine(@"
 +------------------------------------------------------------------+
@@ -43,8 +44,8 @@ namespace VallisNexus.Paginas
 
                 foreach (OptredenDTO optredenDTO in optredenDTOLijst)
                 {
-
-                    Console.WriteLine($"{optredenDTO.teller = teller}. {optredenDTO.artiestNaam}: Van |{optredenDTO.starttijd}|  Tot |{optredenDTO.eindtijd}| Locatie: {optredenDTO.podiumNaam}\n");
+                    optredenDTO.SetOptredenDTOTeller(teller);
+                    Console.WriteLine($"{optredenDTO.teller}. {optredenDTO.artiestNaam}: Van |{optredenDTO.starttijd}|  Tot |{optredenDTO.eindtijd}| Locatie: {optredenDTO.podiumNaam}\n");
                     teller++;
                 }
 
