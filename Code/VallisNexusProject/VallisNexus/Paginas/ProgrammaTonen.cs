@@ -22,13 +22,13 @@ namespace VallisNexus.Paginas
                 Console.ForegroundColor = ConsoleColor.White;
                 Console.WriteLine("==================");
 
-                DBOptreden dbOptreden = new DBOptreden();
-                List<Podium> podiums = dbOptreden.GetOptreden();
+                Optreden alleOptreden = new Optreden();
+                List<Podium> podiums = alleOptreden.GetAlleOptreden();
 
-                List<OptredenDTO> alleOptredens = new List<OptredenDTO>();
+                List <OptredenDTO> alleOptredens = new List<OptredenDTO>();
                 int teller = 1;
 
-                foreach (var podium in podiums)
+                foreach (Podium podium in podiums)
                 {
                     Console.WriteLine($"Podium: {podium.naam}\n");
 
@@ -80,14 +80,15 @@ namespace VallisNexus.Paginas
 
                     if (nummer >= 1 && nummer <= alleOptredens.Count)
                     {
-                        foreach (var podium in podiums)
+                        foreach (Podium podium in podiums)
                         {
                             foreach (OptredenDTO optreden in podium.optredens)
                             {
                                 if(optreden.teller-1 == nummer)
                                 {
-                                    DBFavoriet dbFavoriet = new DBFavoriet();
-                                    dbFavoriet.VoegFavorietToe(optreden);
+                                    Favoriet favoriet = new Favoriet();
+                                    favoriet.VoegFavorietToe(optreden);
+
                                     Console.WriteLine("Het optreden is toegevoegd aan je persoonlijke programma.");
                                 }
                             }

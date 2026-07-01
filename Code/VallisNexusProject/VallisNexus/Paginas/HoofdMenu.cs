@@ -51,9 +51,6 @@ public class HoofdMenu
 
                 string keuze = Console.ReadLine();
                 
-                //Deze writeline werkt niet omdat de code stopt totdat de readline input heef.
-                //Console.ForegroundColor = ConsoleColor.White;
-                //Console.WriteLine("==================");
                 Console.ResetColor();
 
 

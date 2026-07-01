@@ -225,14 +225,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DataAccess\CRUD_VOOR_ORG\DBArtiest_ORG.cs" />
     <Compile Include="DataAccess\DBFavoriet.cs" />
     <Compile Include="DataAccess\DBGenre.cs" />
-    <Compile Include="DataAccess\CRUD_VOOR_ORG\DBOptreden_ORG.cs" />
-    <Compile Include="DataAccess\CRUD_VOOR_ORG\DBPodium_ORG.cs" />
-    <Compile Include="DataAccess\CRUD_VOOR_ORG\DBTickets_ORG.cs" />
     <Compile Include="DataAccess\DBArtiest.cs" />
-    <Compile Include="DataAccess\CRUD_VOOR_ORG\DBGenre_ORG.cs" />
     <Compile Include="DataAccess\DBOptreden.cs" />
     <Compile Include="DataAccess\DBPodium.cs" />
     <Compile Include="DataAccess\DBTicket.cs" />

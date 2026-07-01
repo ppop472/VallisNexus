@@ -24,10 +24,10 @@ namespace VallisNexus.DataAccess
         {
             string sql = "SELECT * FROM Podium WHERE DeletedAt IS NULL";
             List<Podium> podiumLijst = new List<Podium>();
-            using (var connection = new SqlConnection(dbstring))
+            using (SqlConnection connection = new SqlConnection(dbstring))
             {
                 IEnumerable<Podium> query = connection.Query<Podium>(sql);
-                foreach (var podium in query)
+                foreach (Podium podium in query)
                 {
                     podiumLijst.Add(podium);
                 }
@@ -39,7 +39,7 @@ namespace VallisNexus.DataAccess
         {
             string sql = "SELECT * FROM Podium WHERE id = @id WHERE DeletedAt IS NULL";
             object parameters = new { id = id };
-            using (var connection = new SqlConnection(dbstring))
+            using (SqlConnection connection = new SqlConnection(dbstring))
             {
                 Podium query = connection.QueryFirstOrDefault<Podium>(sql, parameters);
                 return query;

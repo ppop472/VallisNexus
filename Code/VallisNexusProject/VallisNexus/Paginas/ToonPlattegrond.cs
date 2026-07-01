@@ -105,12 +105,9 @@ namespace VallisNexus.Paginas
                     Console.Clear();
                     plattegrondTonen = false;
                 }
-
-
             }
         }
     }
-
 }
 
 

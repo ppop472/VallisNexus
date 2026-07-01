@@ -23,18 +23,9 @@ namespace VallisNexus.DataAccess
         {
             try
             {
-                string sql = @"
-INSERT INTO Favoriet (GebruikerId, OptredenId, CreatedAt)
-SELECT @gebruikerId, @optredenId, GETDATE()
-WHERE NOT EXISTS (
-    SELECT 1 
-    FROM Favoriet 
-    WHERE GebruikerId = @gebruikerId 
-      AND OptredenId = @optredenId 
-      AND DeletedAt IS NULL
-);";
+                string sql = @"INSERT INTO Favoriet (GebruikerId, OptredenId, CreatedAt) SELECT @gebruikerId, @optredenId, GETDATE() WHERE NOT EXISTS (SELECT 1 FROM Favoriet WHERE GebruikerId = @gebruikerId AND OptredenId = @optredenId AND DeletedAt IS NULL);";
                 object parameters = new {gebruikerId = 2, optredenId = optreden.id, Now = DateTime.Now };
-                using (var connection = new SqlConnection(dbstring))
+                using (SqlConnection connection = new SqlConnection(dbstring))
                 {
                     IEnumerable<dynamic> query = connection.Query(sql, parameters);
                 }                
@@ -50,10 +41,10 @@ WHERE NOT EXISTS (
         {
             List<Favoriet> favorietLijst = new List<Favoriet>();
             string sql = "SELECT * FROM Favoriet WHERE GebruikerId = 2 AND DeletedAt IS NULL";
-            using (var connection = new SqlConnection(dbstring))
+            using (SqlConnection connection = new SqlConnection(dbstring))
             {
                 IEnumerable<Favoriet> query = connection.Query<Favoriet>(sql);
-                foreach (var item in query)
+                foreach (Favoriet item in query)
                 {
                     favorietLijst.Add(item);                    
                 }                
@@ -61,19 +52,15 @@ WHERE NOT EXISTS (
             return favorietLijst;
         }
 
-        public bool FavorietVerwijderen(int id)
+        public void FavorietVerwijderen(int id)
         {
-            try
+
+            string sql = "Update Favoriet SET DeletedAt = GETDATE() WHERE OptredenId = @Id AND DeletedAt IS NULL";
+            object parameters = new { Id = id };
+            using (SqlConnection connection = new SqlConnection(dbstring))
             {
-                string sql = "Update Favoriet SET DeletedAt = GETDATE() WHERE OptredenId = @Id AND DeletedAt IS NULL";
-                object parameters = new { Id = id };
-                using (var connection = new SqlConnection(dbstring))
-                {
-                    Favoriet query = connection.QueryFirstOrDefault<Favoriet>(sql, parameters);                   
-                }
-                return true;
+                Favoriet query = connection.QueryFirstOrDefault<Favoriet>(sql, parameters);                   
             }
-            catch(Exception ex) { return false; }
         }
     }
 }

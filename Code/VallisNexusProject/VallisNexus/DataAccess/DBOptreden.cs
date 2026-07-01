@@ -25,14 +25,14 @@ namespace VallisNexus.DataAccess
             DBPodium dbPodium = new DBPodium();
             List<Podium> podiumLijst = dbPodium.GetPodium();
 
-            foreach (var podium in podiumLijst)
+            foreach (Podium podium in podiumLijst)
             {
-                using (var connection = new SqlConnection(dbstring))
+                using (SqlConnection connection = new SqlConnection(dbstring))
                 {
                     string sql = "  SELECT * FROM Optreden WHERE PodiumId = @podiumId AND DeletedAt IS NULL ORDER BY StartTijd";
                     object parameters = new { podiumId = podium.id };
                     IEnumerable<OptredenDTO> query = connection.Query<OptredenDTO>(sql,parameters);
-                    foreach (var optreden in query)
+                    foreach (OptredenDTO optreden in query)
                     {
                         podium.optredens.Add(optreden);
                         DBArtiest dbArtiest = new DBArtiest();
@@ -50,7 +50,7 @@ namespace VallisNexus.DataAccess
         {
             DBPodium dbPodium = new DBPodium();
             List<Podium> podiumLijst = dbPodium.GetPodium();
-            using (var connection = new SqlConnection(dbstring))
+            using (SqlConnection connection = new SqlConnection(dbstring))
             {
                 string sql = "  SELECT * FROM Optreden WHERE Id = @id AND DeletedAt IS NULL ORDER BY StartTijd";
                 object parameters = new { id = id };

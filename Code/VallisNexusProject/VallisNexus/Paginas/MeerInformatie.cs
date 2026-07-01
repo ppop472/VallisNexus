@@ -67,11 +67,13 @@ namespace VallisNexus.Paginas
 +------------------------------------------------------------------+
 |                            TICKETS                               |
 +------------------------------------------------------------------+");
-                    DBTicket dbTicket = new DBTicket();
-                    List<Ticket> tickets = dbTicket.GetTicket();
-                    foreach (Ticket ticket in tickets)
+
+                    Ticket ticket = new Ticket();
+                    List<Ticket> tickets = ticket.GetTicket();
+
+                    foreach (Ticket t in tickets)
                     {
-                        Console.WriteLine($"Ticket: {ticket.naam}, Prijs: {ticket.prijs}\n");
+                        Console.WriteLine($"Ticket: {t.naam}, Prijs: {t.prijs}\n");
                       
                     }
                     Console.WriteLine("==============================================================\n");
