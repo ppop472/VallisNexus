@@ -45,9 +45,9 @@ namespace VallisNexus.Paginas
                             Console.WriteLine($"       Eindtijd: {optreden.eindtijd}\n");
 
                             teller++;
-                            optreden.teller = teller;
-                            alleOptredens.Add(optreden);
-                            
+
+                            optreden.SetOptredenDTOTeller(teller);
+                            alleOptredens.Add(optreden);                            
                         }
                     }
                     Console.WriteLine("---------------------------");

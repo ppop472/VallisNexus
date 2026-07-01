@@ -9,9 +9,9 @@ namespace VallisNexus.Models
 {
     internal class Favoriet
     {
-        public int id{ get; set; }
-        public int gebruikerId { get; set; }
-        public int optredenId { get; set; }
+        public int id{ get; private set; }
+        public int gebruikerId { get; private set; }
+        public int optredenId { get; private set; }
 
         public List<Favoriet> GetAlleFavoriet()
         {
