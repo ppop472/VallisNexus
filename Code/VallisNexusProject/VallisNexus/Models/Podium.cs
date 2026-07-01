@@ -7,7 +7,7 @@ public class Podium
 	public string naam { get; private set; }
 	public string beschrijving { get; private set; }
 	public int id { get; private set; }
-    public List<OptredenDTO> optredens { get; set; } = new List<OptredenDTO>();
+    public List<OptredenDTO> optredens { get; private set; } = new List<OptredenDTO>();
     public DateTime createdAt { get; private set; }
     public DateTime updatedAt { get; private set; }
     public DateTime deletedAt { get; private set; }

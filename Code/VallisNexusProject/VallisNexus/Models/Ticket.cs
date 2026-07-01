@@ -9,9 +9,9 @@ namespace VallisNexus.Models
 {
     internal class Ticket
     {
-        public int id { get; set; }
-        public string naam { get; set; }
-        public int prijs { get; set; }
+        public int id { get; private set; }
+        public string naam { get; private set; }
+        public int prijs { get; private set; }
 
         public List<Ticket> GetTicket()
         {

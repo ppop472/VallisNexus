@@ -39,7 +39,7 @@ namespace VallisNexus.DataAccess
                         Artiest artiest = dbArtiest.GetArtiestMetId(optreden.artiestId);
                         if(artiest != null)
                         {
-                            optreden.artiestNaam = artiest.naam;
+                            optreden.SetOptredenDTOArtiestNaam(artiest.naam);
                         }
                     }
                 }
@@ -60,12 +60,12 @@ namespace VallisNexus.DataAccess
                 Artiest artiest = dbArtiest.GetArtiestMetId(query.artiestId);
                 if (artiest != null)
                 {
-                    query.artiestNaam = artiest.naam;
+                    query.SetOptredenDTOArtiestNaam(artiest.naam);
                 }
                 Podium podium = podiumLijst.FirstOrDefault(p => p.id == query.podiumId);
                 if (podium != null)
                 {
-                    query.podiumNaam = podium.naam;
+                    query.SetOptredenDTOPodiumNaam(podium.naam);
                 }
                 return query;
             }           
