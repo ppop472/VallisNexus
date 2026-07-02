@@ -8,25 +8,19 @@ namespace VallisNexus.Models
 {
     public class OptredenDTO : Optreden
     {
-
-        // Deze is toegevoegd omdat ik bij het maken heel logisch vond om artiestnaam en podiumnaam ook erbij te zetten, een DTO is dus hiervoor goed. Vind ik.
-        public string artiestNaam { get; private set; }
         public int teller { get; private set; }
-        public string podiumNaam { get; private set; }
 
-        public void SetOptredenDTOTeller(int teller)
+        public OptredenDTO(int teller, int id, DateTime startTijd, DateTime eindTijd, DateTime createdAt, DateTime? updatedAt, DateTime? deletedAt, Artiest artiest) : base(id, startTijd, eindTijd, createdAt, updatedAt, deletedAt, artiest)
         {
-             this.teller = teller;
+            this.teller = teller;
         }
 
-        public void SetOptredenDTOPodiumNaam(string podiumNaam)
+        // Deze is voor het verwijderen van favoriete Optreden. Bij het tonen van favorieten is de Locatie daarnaast toegeveogd.
+        // het is niet per podium.
+        public OptredenDTO(int teller, Podium podium, int id, DateTime startTijd, DateTime eindTijd, DateTime createdAt, DateTime? updatedAt, DateTime? deletedAt, Artiest artiest) : base(id, startTijd, eindTijd, createdAt, updatedAt, deletedAt, artiest)
         {
-             this.podiumNaam = podiumNaam;
-        }
-
-        public void SetOptredenDTOArtiestNaam(string artiestNaam)
-        {
-            this.artiestNaam = artiestNaam;
+            this.teller = teller;
+            this.podium = podium;
         }
     }
 }

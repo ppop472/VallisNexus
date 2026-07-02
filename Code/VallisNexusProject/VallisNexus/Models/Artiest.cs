@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace VallisNexus.Models
 {
-    internal class Artiest
+    public class Artiest
     {
         public string naam { get; private set; }
         public int id { get; private set; }

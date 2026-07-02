@@ -20,8 +20,11 @@ namespace VallisNexus.DataAccess
             dbstring = Env.GetString("DBSTRING");
         }
 
-        public List<Podium> GetPodium()
+        public List<Podium> GetAllePodiumMetOptreden()
         {
+            DBOptreden dbOptreden = new DBOptreden();
+            
+
             string sql = "SELECT * FROM Podium WHERE DeletedAt IS NULL";
             List<Podium> podiumLijst = new List<Podium>();
             using (SqlConnection connection = new SqlConnection(dbstring))
@@ -29,6 +32,7 @@ namespace VallisNexus.DataAccess
                 IEnumerable<Podium> query = connection.Query<Podium>(sql);
                 foreach (Podium podium in query)
                 {
+                    podium.VoegOptredenLijstToe(dbOptreden.GetAlleOptredenVoorPodium(podium.id));
                     podiumLijst.Add(podium);
                 }
             }
@@ -37,7 +41,7 @@ namespace VallisNexus.DataAccess
 
         public Podium GetPodiumMetId(int id)
         {
-            string sql = "SELECT * FROM Podium WHERE id = @id WHERE DeletedAt IS NULL";
+            string sql = "SELECT * FROM Podium WHERE id = @id AND DeletedAt IS NULL";
             object parameters = new { id = id };
             using (SqlConnection connection = new SqlConnection(dbstring))
             {

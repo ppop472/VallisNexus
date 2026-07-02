@@ -20,55 +20,122 @@ namespace VallisNexus.DataAccess
             dbstring = Env.GetString("DBSTRING");
         }
 
-        public List<Podium> GetOptreden()
+        public List<Optreden> GetAlleOptredenVoorPodium(int id)
         {
-            DBPodium dbPodium = new DBPodium();
-            List<Podium> podiumLijst = dbPodium.GetPodium();
+            List<Optreden> optredenLijst = new List<Optreden>();
 
-            foreach (Podium podium in podiumLijst)
+            string query = @"SELECT Id, StartTijd, EindTijd, CreatedAt, UpdatedAt, DeletedAt, ArtiestId FROM Optreden WHERE PodiumId = @Id AND DeletedAt IS NULL";
+
+            try
             {
-                using (SqlConnection connection = new SqlConnection(dbstring))
+                using (SqlConnection connectie = new SqlConnection(dbstring))
                 {
-                    string sql = "  SELECT * FROM Optreden WHERE PodiumId = @podiumId AND DeletedAt IS NULL ORDER BY StartTijd";
-                    object parameters = new { podiumId = podium.id };
-                    IEnumerable<OptredenDTO> query = connection.Query<OptredenDTO>(sql,parameters);
-                    foreach (OptredenDTO optreden in query)
+                    using (SqlCommand cmd = new SqlCommand(query, connectie))
                     {
-                        podium.optredens.Add(optreden);
-                        DBArtiest dbArtiest = new DBArtiest();
-                        Artiest artiest = dbArtiest.GetArtiestMetId(optreden.artiestId);
-                        if(artiest != null)
+                        cmd.Parameters.AddWithValue("@Id", id);
+                        connectie.Open();
+
+                        using (SqlDataReader reader = cmd.ExecuteReader())
                         {
-                            optreden.SetOptredenDTOArtiestNaam(artiest.naam);
+                            while (reader.Read())
+                            {
+                                DateTime? updatedAt = reader.IsDBNull(4)
+                                    ? (DateTime?)null
+                                    : reader.GetDateTime(4);
+
+                                DateTime? deletedAt = reader.IsDBNull(5)
+                                    ? (DateTime?)null
+                                    : reader.GetDateTime(5);
+
+                                Optreden optreden = new Optreden(
+                                    reader.GetInt32(0),
+                                    reader.GetDateTime(1),
+                                    reader.GetDateTime(2),
+                                    reader.GetDateTime(3),
+                                    updatedAt,
+                                    deletedAt
+                                );
+
+                                int artiestNr = reader.GetInt32(6);
+                                DBArtiest dbArtiest = new DBArtiest();
+                                Artiest artiest = dbArtiest.GetArtiestMetId(artiestNr);
+                                optreden.artiest = artiest;
+                                optredenLijst.Add(optreden);
+                            }
                         }
                     }
                 }
             }
-            return podiumLijst;
+            catch (SqlException ex)
+            {
+                Console.WriteLine("SQL Exception: " + ex.Message);
+            }
+
+            return optredenLijst;
         }
-        public OptredenDTO GetOptredenVoorFavoriete(int id)
+
+        public Optreden GetEenOptredenMetId(int id)
         {
-            DBPodium dbPodium = new DBPodium();
-            List<Podium> podiumLijst = dbPodium.GetPodium();
+            string query = @"SELECT Id, StartTijd, EindTijd, CreatedAt, UpdatedAt, DeletedAt, ArtiestId , PodiumId FROM Optreden WHERE Id = @id AND DeletedAt IS NULL";
+            try
+            {
+                using (SqlConnection connectie = new SqlConnection(dbstring))
+                {
+                    using (SqlCommand cmd = new SqlCommand(query, connectie))
+                    {
+                        cmd.Parameters.AddWithValue("@Id", id);
+                        connectie.Open();
+
+                        using (SqlDataReader reader = cmd.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                DateTime? updatedAt = reader.IsDBNull(4)
+                                    ? (DateTime?)null
+                                    : reader.GetDateTime(4);
+
+                                DateTime? deletedAt = reader.IsDBNull(5)
+                                    ? (DateTime?)null
+                                    : reader.GetDateTime(5);
+
+                                Optreden optreden = new Optreden(
+                                    reader.GetInt32(0),
+                                    reader.GetDateTime(1),
+                                    reader.GetDateTime(2),
+                                    reader.GetDateTime(3),
+                                    updatedAt,
+                                    deletedAt
+                                );
+
+                                int artiestNr = reader.GetInt32(6);
+                                DBArtiest dbArtiest = new DBArtiest();
+                                Artiest artiest = dbArtiest.GetArtiestMetId(artiestNr);
+                                optreden.artiest = artiest;
+                                DBPodium dbPodium = new DBPodium();
+                                var test = reader.GetInt32(6);
+                                optreden.podium = dbPodium.GetPodiumMetId(reader.GetInt32(7));
+                                return optreden;
+                            }
+                        }
+                    }
+                }
+            }
+            catch (SqlException ex)
+            {
+                Console.WriteLine("SQL Exception: " + ex.Message);
+            }
+
+            return null;
+        }
+
+        public int GetAantalOptredens()
+        {
+            string sql = "SELECT COUNT(*) FROM Optreden WHERE DeletedAt IS NULL;";
             using (SqlConnection connection = new SqlConnection(dbstring))
             {
-                string sql = "  SELECT * FROM Optreden WHERE Id = @id AND DeletedAt IS NULL ORDER BY StartTijd";
-                object parameters = new { id = id };
-                OptredenDTO query = connection.QueryFirstOrDefault<OptredenDTO>(sql, parameters);
-
-                DBArtiest dbArtiest = new DBArtiest();
-                Artiest artiest = dbArtiest.GetArtiestMetId(query.artiestId);
-                if (artiest != null)
-                {
-                    query.SetOptredenDTOArtiestNaam(artiest.naam);
-                }
-                Podium podium = podiumLijst.FirstOrDefault(p => p.id == query.podiumId);
-                if (podium != null)
-                {
-                    query.SetOptredenDTOPodiumNaam(podium.naam);
-                }
-                return query;
-            }           
+                int aantal = connection.QueryFirstOrDefault<int>(sql);
+                return aantal;
+            }
         }
     }
 }

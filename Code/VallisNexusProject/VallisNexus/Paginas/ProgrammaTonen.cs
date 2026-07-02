@@ -22,32 +22,32 @@ namespace VallisNexus.Paginas
                 Console.ForegroundColor = ConsoleColor.White;
                 Console.WriteLine("==================");
 
-                Optreden alleOptreden = new Optreden();
-                List<Podium> podiums = alleOptreden.GetAlleOptreden();
-
-                List <OptredenDTO> alleOptredens = new List<OptredenDTO>();
                 int teller = 1;
 
-                foreach (Podium podium in podiums)
-                {
-                    Console.WriteLine($"Podium: {podium.naam}\n");
+                Podium podium = new Podium();
+                List<Podium> podiums = podium.GetAllePodiumMetOptreden();
+                List<OptredenDTO> alleoptredenDTO = new List<OptredenDTO>();
 
-                    if(podium.optredens.Count == 0)
+                foreach (Podium p in podiums)
+                {
+                    Console.WriteLine($"Podium: {p.naam}\n");
+
+                    if (p.optredens.Count == 0)
                     {
                         Console.WriteLine($"Er zijn geen optredens.\n");
                     }
                     else
                     {
-                        foreach (OptredenDTO optreden in podium.optredens)
+                        foreach (Optreden optreden in p.optredens)
                         {
-                            Console.WriteLine($"    {teller}. {optreden.artiestNaam}");
-                            Console.WriteLine($"       Starttijd: {optreden.starttijd}");
-                            Console.WriteLine($"       Eindtijd: {optreden.eindtijd}\n");
+                            OptredenDTO optredenDTO = new OptredenDTO(teller,optreden.id,optreden.starttijd,optreden.eindtijd,optreden.createdAt,optreden.updatedAt,optreden.deletedAt, optreden.artiest);
+                            alleoptredenDTO.Add(optredenDTO);
+
+                            Console.WriteLine($"    {optredenDTO.teller}. {optreden.artiest.naam}");
+                            Console.WriteLine($"       Starttijd: {optredenDTO.starttijd}");
+                            Console.WriteLine($"       Eindtijd: {optredenDTO.eindtijd}\n");
 
                             teller++;
-
-                            optreden.SetOptredenDTOTeller(teller);
-                            alleOptredens.Add(optreden);                            
                         }
                     }
                     Console.WriteLine("---------------------------");
@@ -78,21 +78,19 @@ namespace VallisNexus.Paginas
                     Console.Write("Voer het nummer van het optreden in: ");
                     int nummer = Convert.ToInt32(Console.ReadLine());
 
-                    if (nummer >= 1 && nummer <= alleOptredens.Count)
-                    {
-                        foreach (Podium podium in podiums)
-                        {
-                            foreach (OptredenDTO optreden in podium.optredens)
-                            {
-                                if(optreden.teller-1 == nummer)
-                                {
-                                    Favoriet favoriet = new Favoriet();
-                                    favoriet.VoegFavorietToe(optreden);
+                    Optreden optreden = new Optreden();
 
-                                    Console.WriteLine("Het optreden is toegevoegd aan je persoonlijke programma.");
-                                }
+                    if (nummer >= 1 && nummer <= optreden.GetAantalOptredens())
+                    {
+                        foreach (OptredenDTO optredenDTO in alleoptredenDTO)
+                        {
+                            if (optredenDTO.teller == nummer)
+                            {
+                                optredenDTO.VoegFavorieteOptredenToe(optredenDTO);
+
+                                Console.WriteLine("Het optreden is toegevoegd aan je persoonlijke programma.");
                             }
-                        }                        
+                        }
                     }
                     else
                     {
