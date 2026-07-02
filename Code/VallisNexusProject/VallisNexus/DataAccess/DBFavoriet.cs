@@ -21,37 +21,44 @@ namespace VallisNexus.DataAccess
 
         public bool VoegFavorietToe(OptredenDTO optreden)
         {
-            try
-            {
-                string sql = @"INSERT INTO Favoriet (GebruikerId, OptredenId, CreatedAt) SELECT @gebruikerId, @optredenId, GETDATE() WHERE NOT EXISTS (SELECT 1 FROM Favoriet WHERE GebruikerId = @gebruikerId AND OptredenId = @optredenId AND DeletedAt IS NULL);";
-                object parameters = new {gebruikerId = 2, optredenId = optreden.id, Now = DateTime.Now };
-                using (SqlConnection connection = new SqlConnection(dbstring))
-                {
-                    IEnumerable<dynamic> query = connection.Query(sql, parameters);
-                }                
-                return true;
-            }
-            catch (Exception ex)
-            {                
-                return false;
-            }
-        }
-
-        public List<Favoriet> GetAlleFavoriet()
-        {
-            List<Favoriet> favorietLijst = new List<Favoriet>();
-            string sql = "SELECT * FROM Favoriet WHERE GebruikerId = 2 AND DeletedAt IS NULL";
+            string sql = @"INSERT INTO Favoriet (GebruikerId, OptredenId, CreatedAt) SELECT @gebruikerId, @optredenId, GETDATE() WHERE NOT EXISTS (SELECT 1 FROM Favoriet WHERE GebruikerId = @gebruikerId AND OptredenId = @optredenId AND DeletedAt IS NULL);";
+            object parameters = new { gebruikerId = 2, optredenId = optreden.id, Now = DateTime.Now };
             using (SqlConnection connection = new SqlConnection(dbstring))
             {
-                IEnumerable<Favoriet> query = connection.Query<Favoriet>(sql);
-                foreach (Favoriet item in query)
-                {
-                    favorietLijst.Add(item);                    
-                }                
+                IEnumerable<dynamic> query = connection.Query(sql, parameters);
             }
-            return favorietLijst;
+            return true;
         }
 
+        public List<Optreden> GetAlleFavorietOptreden()
+        {
+            List<Optreden> optredens = new List<Optreden>();
+            string sql = "SELECT OptredenId FROM Favoriet WHERE GebruikerId = 2 AND DeletedAt IS NULL";
+            using (SqlConnection connection = new SqlConnection(dbstring))
+            {
+                IEnumerable<int> query = connection.Query<int>(sql);
+                foreach (int optredenId in query)
+                {
+                    DBOptreden dbOptreden = new DBOptreden();
+                }
+            }
+            return optredens;
+        }
+
+        public List<int> GetAlleFavorieten()
+        {
+            List<int> favorieteOptredenNrLijst = new List<int>();
+            string sql = "SELECT OptredenId FROM Favoriet WHERE GebruikerId = 2 AND DeletedAt IS NULL";
+            using (SqlConnection connection = new SqlConnection(dbstring))
+            {
+                IEnumerable<int> query = connection.Query<int>(sql);
+                foreach (int optredenId in query)
+                {
+                    favorieteOptredenNrLijst.Add(optredenId);
+                }
+            }
+            return favorieteOptredenNrLijst;
+        }
         public void FavorietVerwijderen(int id)
         {
 
@@ -59,8 +66,8 @@ namespace VallisNexus.DataAccess
             object parameters = new { Id = id };
             using (SqlConnection connection = new SqlConnection(dbstring))
             {
-                Favoriet query = connection.QueryFirstOrDefault<Favoriet>(sql, parameters);                   
+                IEnumerable<dynamic> query = connection.QueryFirstOrDefault<dynamic>(sql, parameters);
             }
         }
-    }
+     }
 }

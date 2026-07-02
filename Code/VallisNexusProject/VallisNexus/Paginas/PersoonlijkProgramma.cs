@@ -14,20 +14,7 @@ namespace VallisNexus.Paginas
     internal class PersoonlijkProgramma
     {
         public void ToonPersoonlijkProgramma()
-        {
-
-
-            List<OptredenDTO> optredenDTOLijst = new List<OptredenDTO>();
-
-            //Optreden optreden = new Optreden();
-
-            Favoriet favoriet = new Favoriet();
-            List<Favoriet> favorietLijst = favoriet.GetAlleFavoriet();
-
-            foreach (Favoriet fav in favorietLijst)
-            {
-                //optredenDTOLijst.Add(optreden.GetOptredenVoorFavoriete(fav.optredenId));
-            }
+        {            
             Console.ForegroundColor = ConsoleColor.White;
 
             bool plattegrondTonen = true;
@@ -42,13 +29,18 @@ namespace VallisNexus.Paginas
 |                      Persoonlijke Schema                         |
 +------------------------------------------------------------------+" + "\n");
 
-                foreach (OptredenDTO optredenDTO in optredenDTOLijst)
-                {
-                    //optredenDTO.SetOptredenDTOTeller(teller);
-                    //Console.WriteLine($"{optredenDTO.teller}. {optredenDTO.artiestNaam}: Van |{optredenDTO.starttijd}|  Tot |{optredenDTO.eindtijd}| Locatie: {optredenDTO.podiumNaam}\n");
-                    teller++;
-                }
+                Podium podium = new Podium();
+                List<Optreden> alleFavorieteOptredens = podium.GetAllePodiumMetFavorietOptreden();
+                List<OptredenDTO> alleFavorieteOptredenDTO = new List<OptredenDTO>();
 
+                foreach (var favorieteOptreden in alleFavorieteOptredens)
+                {
+                    OptredenDTO optredenDTO = new OptredenDTO(teller, favorieteOptreden.podium, favorieteOptreden.id, favorieteOptreden.starttijd, favorieteOptreden.eindtijd, favorieteOptreden.createdAt, favorieteOptreden.updatedAt, favorieteOptreden.deletedAt, favorieteOptreden.artiest);
+                    alleFavorieteOptredenDTO.Add(optredenDTO);
+                    teller++;
+                    Console.WriteLine($"{optredenDTO.teller}. {optredenDTO.artiest.naam}: Van {optredenDTO.starttijd} Tot {optredenDTO.eindtijd} Bij {optredenDTO.podium.naam}\n");
+                }
+                Console.Write("--------------------------------------------------------------------\n");
                 Console.ForegroundColor = ConsoleColor.Green;
                 Console.Write("1. ");
                 Console.ForegroundColor = ConsoleColor.White;
@@ -62,29 +54,41 @@ namespace VallisNexus.Paginas
                 string keuze = Console.ReadLine();
                 if (keuze == "1")
                 {
+                    Optreden optreden = new Optreden();
                     Console.WriteLine("Voer het nummer van de artiestin: ");
-                    int nummer = Convert.ToInt32(Console.ReadLine());
-
-                    if (nummer >= 1 && nummer <= optredenDTOLijst.Count)
+                    try
                     {
-                        foreach (OptredenDTO optredenDto in optredenDTOLijst)
+                        int nummer = Convert.ToInt32(Console.ReadLine());
+
+                        if (nummer >= 1 && nummer <= optreden.GetAantalOptredens())
                         {
-                            if (optredenDto.teller == nummer)
+                            foreach (OptredenDTO optredenDTO in alleFavorieteOptredenDTO)
                             {
-                                favoriet.FavorietVerwijderen(optredenDto.id);
-                                Console.Clear();
-                                plattegrondTonen = false;
-                                Console.WriteLine("Je hebt een favoriete verwijderd.");
+
+                                if (optredenDTO.teller == nummer)
+                                {
+                                    optredenDTO.VerwijderFavorieteOptreden(optredenDTO);
+
+                                    Console.WriteLine("Het optreden is verwijderd van je persoonlijke programma.");
+                                }
                             }
                         }
-                    }
-                    else
-                    {
-                        Console.WriteLine("Ongeldig nummer.");
-                    }
+                        else
+                        {
+                            Console.WriteLine("Ongeldig nummer.");
+                        }
 
-                    Console.WriteLine("Druk op een toets om verder te gaan...");
-                    Console.ReadKey();
+                        Console.WriteLine("Druk op een toets om verder te gaan...");
+                        Console.ReadKey();
+
+                    }
+                    
+                    catch(System.FormatException ex)
+                    {
+                        Console.WriteLine("Ongeldig nummer.\n");
+                        Console.WriteLine("Druk op een toets om verder te gaan...");
+                        Console.ReadKey();
+                    }                    
                 }
                 else if (keuze == "2")
                 {
