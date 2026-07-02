@@ -47,21 +47,10 @@ public class Optreden
         return dBOptreden.GetAantalOptredens();
     }
 
-    public void VoegArtiestToe(Artiest artiest)
-    {
-        this.artiest = artiest;
-    }
-
     public void VoegFavorieteOptredenToe(OptredenDTO optreden)
     {
         DBFavoriet dbFavoriet = new DBFavoriet();
         dbFavoriet.VoegFavorietToe(optreden);
-    }
-
-    public List<Optreden> GetAlleFaviorieteOptreden()
-    {
-        DBFavoriet dbFavoriet = new DBFavoriet();
-        return dbFavoriet.GetAlleFavorietOptreden();
     }
 
     public void VerwijderFavorieteOptreden(OptredenDTO optredenDto)
