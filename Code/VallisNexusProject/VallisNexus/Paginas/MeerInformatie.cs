@@ -125,15 +125,6 @@ namespace VallisNexus.Paginas
 7. Het beklimmen van hekken, podia, lichtmasten of andere constructies is niet toegestaan.
 
 8. Roken en vapen is alleen toegestaan in de daarvoor aangewezen zones.
-
-9. Bezoekers betreden het festivalterrein op eigen risico. De organisatie is niet aansprakelijk voor verlies, diefstal of schade aan persoonlijke eigendommen.
-
-10. Bij overtreding van de huisregels of verstoring van de openbare orde kan de toegang tot het festival zonder restitutie van het ticket worden ontzegd.
-
-11. Zorg ervoor dat nooduitgangen en vluchtroutes altijd vrij blijven.
-
-12. Geniet van het festival, respecteer elkaar en maak er samen een onvergetelijke dag van!
-                    
                     ");
                     Console.WriteLine("==============================================================\n");
                     meerInformatie.ToonMeerInformatie();
