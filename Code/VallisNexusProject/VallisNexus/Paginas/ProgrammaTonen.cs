@@ -22,36 +22,36 @@ namespace VallisNexus.Paginas
                 Console.ForegroundColor = ConsoleColor.White;
                 Console.WriteLine("==================");
 
-                Optreden alleOptreden = new Optreden();
-                List<Podium> podiums = alleOptreden.GetAlleOptreden();
+                //Optreden alleOptreden = new Optreden();
+                //List<Podium> podiums = alleOptreden.GetAlleOptreden();
 
                 List <OptredenDTO> alleOptredens = new List<OptredenDTO>();
                 int teller = 1;
 
-                foreach (Podium podium in podiums)
-                {
-                    Console.WriteLine($"Podium: {podium.naam}\n");
+                //foreach (Podium podium in podiums)
+                //{
+                //    Console.WriteLine($"Podium: {podium.naam}\n");
 
-                    if(podium.optredens.Count == 0)
-                    {
-                        Console.WriteLine($"Er zijn geen optredens.\n");
-                    }
-                    else
-                    {
-                        foreach (OptredenDTO optreden in podium.optredens)
-                        {
-                            Console.WriteLine($"    {teller}. {optreden.artiestNaam}");
-                            Console.WriteLine($"       Starttijd: {optreden.starttijd}");
-                            Console.WriteLine($"       Eindtijd: {optreden.eindtijd}\n");
+                //    if(podium.optredens.Count == 0)
+                //    {
+                //        Console.WriteLine($"Er zijn geen optredens.\n");
+                //    }
+                //    else
+                //    {
+                //        foreach (OptredenDTO optreden in podium.optredens)
+                //        {
+                //            //Console.WriteLine($"    {teller}. {optreden.artiestNaam}");
+                //            Console.WriteLine($"       Starttijd: {optreden.starttijd}");
+                //            Console.WriteLine($"       Eindtijd: {optreden.eindtijd}\n");
 
-                            teller++;
+                //            teller++;
 
-                            optreden.SetOptredenDTOTeller(teller);
-                            alleOptredens.Add(optreden);                            
-                        }
-                    }
-                    Console.WriteLine("---------------------------");
-                }
+                //            //optreden.SetOptredenDTOTeller(teller);
+                //            alleOptredens.Add(optreden);                            
+                //        }
+                //    }
+                //    Console.WriteLine("---------------------------");
+                //}
 
                 Console.WriteLine();
                 Console.ForegroundColor = ConsoleColor.Green;
@@ -80,19 +80,19 @@ namespace VallisNexus.Paginas
 
                     if (nummer >= 1 && nummer <= alleOptredens.Count)
                     {
-                        foreach (Podium podium in podiums)
-                        {
-                            foreach (OptredenDTO optreden in podium.optredens)
-                            {
-                                if(optreden.teller-1 == nummer)
-                                {
-                                    Favoriet favoriet = new Favoriet();
-                                    favoriet.VoegFavorietToe(optreden);
+                        //foreach (Podium podium in podiums)
+                        //{
+                        //    foreach (OptredenDTO optreden in podium.optredens)
+                        //    {
+                        //        if(optreden.teller-1 == nummer)
+                        //        {
+                        //            Favoriet favoriet = new Favoriet();
+                        //            favoriet.VoegFavorietToe(optreden);
 
-                                    Console.WriteLine("Het optreden is toegevoegd aan je persoonlijke programma.");
-                                }
-                            }
-                        }                        
+                        //            Console.WriteLine("Het optreden is toegevoegd aan je persoonlijke programma.");
+                        //        }
+                        //    }
+                        //}                        
                     }
                     else
                     {

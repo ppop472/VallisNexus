@@ -20,55 +20,62 @@ namespace VallisNexus.DataAccess
             dbstring = Env.GetString("DBSTRING");
         }
 
-        public List<Podium> GetOptreden()
-        {
-            DBPodium dbPodium = new DBPodium();
-            List<Podium> podiumLijst = dbPodium.GetPodium();
-
-            foreach (Podium podium in podiumLijst)
+        public List<Optreden> GetOptreden()
+        {     
+            List<Optreden> optredenLijst = new List<Optreden>();
+            string query = "SELECT * FROM Optreden where DeletedAt IS NULL";
+            try
             {
-                using (SqlConnection connection = new SqlConnection(dbstring))
+                using (SqlConnection conn = new SqlConnection(dbstring))
+                using (SqlCommand cmd = new SqlCommand(query, conn))
                 {
-                    string sql = "  SELECT * FROM Optreden WHERE PodiumId = @podiumId AND DeletedAt IS NULL ORDER BY StartTijd";
-                    object parameters = new { podiumId = podium.id };
-                    IEnumerable<OptredenDTO> query = connection.Query<OptredenDTO>(sql,parameters);
-                    foreach (OptredenDTO optreden in query)
+                    cmd.Parameters.AddWithValue("@minPrice", 5);
+
+                    conn.Open();
+
+                    using (SqlDataReader reader = cmd.ExecuteReader())
                     {
-                        podium.optredens.Add(optreden);
-                        DBArtiest dbArtiest = new DBArtiest();
-                        Artiest artiest = dbArtiest.GetArtiestMetId(optreden.artiestId);
-                        if(artiest != null)
+                        while (reader.Read())
                         {
-                            optreden.SetOptredenDTOArtiestNaam(artiest.naam);
+                            Optreden optreden = new Optreden(reader.GetInt32(0),
+                                                             reader.GetDateTime(1),
+                                                             reader.GetDateTime(2),
+                                                             reader.GetDateTime(3),
+                                                             reader.GetDateTime(4),
+                                                             reader.GetDateTime(5));
                         }
                     }
                 }
             }
-            return podiumLijst;
-        }
-        public OptredenDTO GetOptredenVoorFavoriete(int id)
-        {
-            DBPodium dbPodium = new DBPodium();
-            List<Podium> podiumLijst = dbPodium.GetPodium();
-            using (SqlConnection connection = new SqlConnection(dbstring))
+            catch (SqlException ex)
             {
-                string sql = "  SELECT * FROM Optreden WHERE Id = @id AND DeletedAt IS NULL ORDER BY StartTijd";
-                object parameters = new { id = id };
-                OptredenDTO query = connection.QueryFirstOrDefault<OptredenDTO>(sql, parameters);
-
-                DBArtiest dbArtiest = new DBArtiest();
-                Artiest artiest = dbArtiest.GetArtiestMetId(query.artiestId);
-                if (artiest != null)
-                {
-                    query.SetOptredenDTOArtiestNaam(artiest.naam);
-                }
-                Podium podium = podiumLijst.FirstOrDefault(p => p.id == query.podiumId);
-                if (podium != null)
-                {
-                    query.SetOptredenDTOPodiumNaam(podium.naam);
-                }
-                return query;
-            }           
+                Console.WriteLine("SQL Exception: " + ex.Message);
+            }
+            return optredenLijst;
         }
+        //public OptredenDTO GetOptredenVoorFavoriete(int id)
+        //{
+        //    DBPodium dbPodium = new DBPodium();
+        //    List<Podium> podiumLijst = dbPodium.GetPodium();
+        //    using (SqlConnection connection = new SqlConnection(dbstring))
+        //    {
+        //        string sql = "  SELECT * FROM Optreden WHERE Id = @id AND DeletedAt IS NULL ORDER BY StartTijd";
+        //        object parameters = new { id = id };
+        //        OptredenDTO query = connection.QueryFirstOrDefault<OptredenDTO>(sql, parameters);
+
+        //        DBArtiest dbArtiest = new DBArtiest();
+        //        Artiest artiest = dbArtiest.GetArtiestMetId(query.artiestId);
+        //        if (artiest != null)
+        //        {
+        //            query.SetOptredenDTOArtiestNaam(artiest.naam);
+        //        }
+        //        Podium podium = podiumLijst.FirstOrDefault(p => p.id == query.podiumId);
+        //        if (podium != null)
+        //        {
+        //            query.SetOptredenDTOPodiumNaam(podium.naam);
+        //        }
+        //        return query;
+        //    }           
+        //}
     }
 }

@@ -29,6 +29,7 @@ namespace VallisNexus.DataAccess
                 IEnumerable<Podium> query = connection.Query<Podium>(sql);
                 foreach (Podium podium in query)
                 {
+
                     podiumLijst.Add(podium);
                 }
             }

@@ -98,40 +98,40 @@ namespace VallisNexus.Paginas
                 // Het is hardcoded omdat we geen data hebben / krijgen van camerabeelden
                 // Voor podium is die van het aantal optredens
 
-                Optreden alleOptreden = new Optreden();
-                List<Podium> podiums = alleOptreden.GetAlleOptreden();
+                //Optreden alleOptreden = new Optreden();
+                //List<Podium> podiums = alleOptreden.GetAlleOptreden();
 
-                int teller = 1;
+                //int teller = 1;
 
-                foreach (Podium podium in podiums)
-                {
-                    Console.WriteLine($"Podium: {podium.naam}\n");
+                //foreach (Podium podium in podiums)
+                //{
+                //    Console.WriteLine($"Podium: {podium.naam}\n");
 
-                    if (podium.optredens.Count == 0)
-                    {
-                        Console.WriteLine($"Er zijn geen optredens.\n");
-                    }
-                    else
-                    {
-                        if(podium.optredens.Count >= 10)
-                        {
-                            Console.WriteLine("Status: Druk\n");
-                        }
-                        else if (podium.optredens.Count < 10 && podium.optredens.Count >= 5)
-                        {
-                            Console.WriteLine("Status: Gemiddeld\n");
-                        }
-                        else if (podium.optredens.Count < 5 && podium.optredens.Count > 0)
-                        {
-                            Console.WriteLine("Status: Rustig\n");
-                        }
-                        else
-                        {
-                            Console.WriteLine("Geen data gevonden\n");
-                        }
-                    }
-                    Console.Write("----------------------------------------------------------\n");
-                }
+                //    if (podium.optredens.Count == 0)
+                //    {
+                //        Console.WriteLine($"Er zijn geen optredens.\n");
+                //    }
+                //    else
+                //    {
+                //        if(podium.optredens.Count >= 10)
+                //        {
+                //            Console.WriteLine("Status: Druk\n");
+                //        }
+                //        else if (podium.optredens.Count < 10 && podium.optredens.Count >= 5)
+                //        {
+                //            Console.WriteLine("Status: Gemiddeld\n");
+                //        }
+                //        else if (podium.optredens.Count < 5 && podium.optredens.Count > 0)
+                //        {
+                //            Console.WriteLine("Status: Rustig\n");
+                //        }
+                //        else
+                //        {
+                //            Console.WriteLine("Geen data gevonden\n");
+                //        }
+                //    }
+                //    Console.Write("----------------------------------------------------------\n");
+                //}
 
                 // Geen data voor wc en foodtrucks
                 Console.WriteLine("WC\n");

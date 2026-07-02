@@ -19,14 +19,14 @@ namespace VallisNexus.Paginas
 
             List<OptredenDTO> optredenDTOLijst = new List<OptredenDTO>();
 
-            Optreden optreden = new Optreden();
+            //Optreden optreden = new Optreden();
 
             Favoriet favoriet = new Favoriet();
             List<Favoriet> favorietLijst = favoriet.GetAlleFavoriet();
 
             foreach (Favoriet fav in favorietLijst)
             {
-                optredenDTOLijst.Add(optreden.GetOptredenVoorFavoriete(fav.optredenId));
+                //optredenDTOLijst.Add(optreden.GetOptredenVoorFavoriete(fav.optredenId));
             }
             Console.ForegroundColor = ConsoleColor.White;
 
@@ -44,8 +44,8 @@ namespace VallisNexus.Paginas
 
                 foreach (OptredenDTO optredenDTO in optredenDTOLijst)
                 {
-                    optredenDTO.SetOptredenDTOTeller(teller);
-                    Console.WriteLine($"{optredenDTO.teller}. {optredenDTO.artiestNaam}: Van |{optredenDTO.starttijd}|  Tot |{optredenDTO.eindtijd}| Locatie: {optredenDTO.podiumNaam}\n");
+                    //optredenDTO.SetOptredenDTOTeller(teller);
+                    //Console.WriteLine($"{optredenDTO.teller}. {optredenDTO.artiestNaam}: Van |{optredenDTO.starttijd}|  Tot |{optredenDTO.eindtijd}| Locatie: {optredenDTO.podiumNaam}\n");
                     teller++;
                 }
 

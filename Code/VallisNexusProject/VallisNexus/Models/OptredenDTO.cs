@@ -8,25 +8,11 @@ namespace VallisNexus.Models
 {
     public class OptredenDTO : Optreden
     {
+        public OptredenDTO(int id, DateTime startTijd, DateTime eindTijd, DateTime createdAt, DateTime updatedAt, DateTime deletedAt) : base(id, startTijd, eindTijd, createdAt, updatedAt, deletedAt)
+        {
+        }
 
         // Deze is toegevoegd omdat ik bij het maken heel logisch vond om artiestnaam en podiumnaam ook erbij te zetten, een DTO is dus hiervoor goed. Vind ik.
-        public string artiestNaam { get; private set; }
         public int teller { get; private set; }
-        public string podiumNaam { get; private set; }
-
-        public void SetOptredenDTOTeller(int teller)
-        {
-             this.teller = teller;
-        }
-
-        public void SetOptredenDTOPodiumNaam(string podiumNaam)
-        {
-             this.podiumNaam = podiumNaam;
-        }
-
-        public void SetOptredenDTOArtiestNaam(string artiestNaam)
-        {
-            this.artiestNaam = artiestNaam;
-        }
     }
 }
