@@ -30,21 +30,6 @@ namespace VallisNexus.DataAccess
             return true;
         }
 
-        public List<Optreden> GetAlleFavorietOptreden()
-        {
-            List<Optreden> optredens = new List<Optreden>();
-            string sql = "SELECT OptredenId FROM Favoriet WHERE GebruikerId = 2 AND DeletedAt IS NULL";
-            using (SqlConnection connection = new SqlConnection(dbstring))
-            {
-                IEnumerable<int> query = connection.Query<int>(sql);
-                foreach (int optredenId in query)
-                {
-                    DBOptreden dbOptreden = new DBOptreden();
-                }
-            }
-            return optredens;
-        }
-
         public List<int> GetAlleFavorieten()
         {
             List<int> favorieteOptredenNrLijst = new List<int>();
